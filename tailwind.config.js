@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -5,6 +6,9 @@ export default {
     extend: {
       animation: {
         marquee: "marquee 20s linear infinite",
+        "spin-slow": "spin 120s linear infinite",
+        "rocket-enter": "rocketEnter 2s ease-out forwards",
+        "rocket-move": "rocketMove 4s ease-in-out infinite 2s", // delay added
       },
       fontFamily: {
         heading: ["GreaterTheory", "sans-serif"],
@@ -14,6 +18,20 @@ export default {
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        rocketMove: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        rocketEnter: {
+          "0%": {
+            transform: "translateY(200px)", // ❗ removed -50%
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
         },
       },
     },
