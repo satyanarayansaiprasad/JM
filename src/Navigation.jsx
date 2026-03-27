@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import OurTeam from "./pages/OurTeam";
 import Contact from "./pages/Contact";
+import Works from "./pages/Works";
 
 export const NavigationRoute = () => {
   return (
@@ -14,6 +15,7 @@ export const NavigationRoute = () => {
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/works" element={<Works />} />
       </Routes>
       <Footer />
     </Router>
