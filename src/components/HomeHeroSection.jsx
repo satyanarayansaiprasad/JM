@@ -569,7 +569,7 @@ const HomeHeroSection = () => {
         alt="Cloud"
         className="
           absolute 
-        bottom-0
+        bottom-[-2%]
         "
       />
 
