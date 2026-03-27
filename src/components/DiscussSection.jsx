@@ -11,8 +11,8 @@ const DiscussSection = () => {
     <div className="relative w-full h-dvh  py-20 overflow-hidden">
       {/* TITLE */}
       <div className="top-10 left-20 absolute ">
-        <img src={disText} className="w-[400px] mx-auto" />
-        <img src={disSubTExt} className="w-[300px] mx-auto mt-4" />
+        <img src={disText} className="w-[400px] mx-auto" alt="img" />
+        <img src={disSubTExt} className="w-[300px] mx-auto mt-4" alt="img" />
       </div>
 
       {/* CIRCLES */}
@@ -42,19 +42,28 @@ const DiscussSection = () => {
       <img
         src={person1}
         className="absolute top-20 left-1/2 -translate-x-1/2 w-52"
+        alt="img"
       />
       <p className="absolute top-[485px] left-1/2 -translate-x-1/2 text-sm">
         3+ Years Experience
       </p>
 
       {/* LEFT */}
-      <img src={person3} className="absolute bottom-36 left-[150px] w-52" />
+      <img
+        src={person3}
+        className="absolute bottom-36 left-[150px] w-52"
+        alt="img"
+      />
       <p className="absolute bottom-[240px] left-[100px] text-sm">
         creative ideas
       </p>
 
       {/* RIGHT TOP */}
-      <img src={person2} className="absolute top-32 right-16 w-[300px]" />
+      <img
+        src={person2}
+        className="absolute top-32 right-16 w-[300px]"
+        alt="img"
+      />
       <p className="absolute top-[100px] right-[150px] text-sm">
         169+ Campaigns
       </p>
@@ -63,13 +72,18 @@ const DiscussSection = () => {
       <img
         src={person4}
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48"
+        alt="img"
       />
       <p className="absolute bottom-10 left-[750px] text-sm">
         Cost effective solutions
       </p>
 
       {/* RIGHT BOTTOM */}
-      <img src={person5} className="absolute bottom-0 right-[200px] w-48" />
+      <img
+        src={person5}
+        className="absolute bottom-0 right-[200px] w-48"
+        alt="img"
+      />
       <p className="absolute bottom-4 right-36 text-sm">Data driven results</p>
 
       {/* FOOTER TEXT */}
