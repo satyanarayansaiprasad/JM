@@ -1,6 +1,4 @@
 import React from "react";
-import HomeText from "../assets/home-text.png";
-import HomeBg from "../assets/home-bg.png";
 import Earth from "../assets/earth.png";
 import Cloud from "../assets/cloud.png";
 import Rocket from "../assets/rocket.png";
