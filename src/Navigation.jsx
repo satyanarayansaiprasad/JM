@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import OurTeam from "./pages/OurTeam";
+import Contact from "./pages/Contact";
 
 export const NavigationRoute = () => {
   return (
@@ -12,7 +13,7 @@ export const NavigationRoute = () => {
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/our-team" element={<OurTeam />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact-us" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
