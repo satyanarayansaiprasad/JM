@@ -14,3 +14,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "MontserratItalic";
+  src: url("/public/fonts/Montserrat-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sage";
+  src: url("/public/fonts/Sage.otf") format("opentype");
+}

@@ -13,6 +13,8 @@ export default {
       fontFamily: {
         heading: ["GreaterTheory", "sans-serif"],
         script: ["Kensington", "cursive"],
+        body: ["MontserratItalic", "sans-serif"], // for paragraph
+        fancy: ["Sage", "cursive"], // extra font
       },
       keyframes: {
         marquee: {
