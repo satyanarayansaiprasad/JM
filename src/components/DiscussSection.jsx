@@ -6,7 +6,7 @@ import person4 from "../assets/person4.png";
 import person5 from "../assets/person5.png";
 
 import { motion } from "framer-motion";
-import mobileTexthero from "../assets/mobile-text-hero.png";
+
 const DiscussSection = () => {
   useEffect(() => {
     const elements = document.querySelectorAll(".animate-on-scroll");
@@ -98,7 +98,7 @@ const DiscussSection = () => {
         {/* CENTER */}
         <img
           src={person1}
-          className="absolute top-20 left-1/2 -translate-x-1/2 w-52"
+          className="absolute top-20  left-1/2 -translate-x-1/2 w-52"
           alt="img"
         />
         <p className="absolute top-[485px] left-1/2 -translate-x-1/2 text-sm">
@@ -146,12 +146,32 @@ const DiscussSection = () => {
         </p>
 
         {/* FOOTER TEXT */}
-        <div className=" absolute left-10 px-6 bottom-[10px]">
-          <h2 className="text-4xl font-bold">
-            OUR <span className="italic font-extrabold">PROUD</span>
-          </h2>
-          <div className="w-24 h-2 bg-yellow-500 mt-2"></div>
-          <p className="text-2xl">CLIENTS</p>
+        <div className=" ">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="absolute bottom-0 left-10 z-20 pb-10"
+          >
+            <div className="flex flex-col select-none">
+              <h3 className="text-4xl md:text-3xl font-black text-black uppercase leading-[0.8] tracking-tight font-heading">
+                OUR <span className="italic">PROUD</span>
+              </h3>
+              <div className="flex items-center mt-2">
+                <h3 className="text-4xl md:text-3xl font-black text-black uppercase tracking-tight font-heading">
+                  CLIENTS
+                </h3>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "50px" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.5, duration: 0.8, ease: "circOut" }}
+                  className="h-6 md:h-6 bg-[#FEC107] ml-6 skew-x-[-30deg] origin-left"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
       <div className="md:hidden ">
