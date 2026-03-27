@@ -1,13 +1,16 @@
 import React from "react";
 import HomeHeroSection from "../components/HomeHeroSection";
 import DiscussSection from "../components/DiscussSection";
+import ClientsMarquee from "../components/ClientLogo";
+import Testimonials from "../components/ChatBubble";
 
 const Home = () => {
   return (
     <div>
       <HomeHeroSection />
       <DiscussSection />
-      <div className="h-24 bg-white"></div>
+      <ClientsMarquee />
+      <Testimonials />
     </div>
   );
 };
