@@ -30,18 +30,18 @@ const ServiceDetailFour = () => {
         >
           <div className="relative mx-auto max-w-7xl">
             {/* LEFT BLUE CIRCLE */}
-            <motion.div
+            {/* <motion.div
               animate={{ y: [0, -16, 0] }}
               transition={{ repeat: Infinity, duration: 5 }}
               className="absolute left-[-95px] top-[210px] z-0 h-[120px] w-[120px] rounded-full bg-[#39AEB9] lg:left-[-120px] lg:top-[220px] lg:h-[165px] lg:w-[165px]"
-            />
+            /> */}
 
             {/* RIGHT ORANGE CIRCLE */}
-            <motion.div
+            {/* <motion.div
               animate={{ y: [0, 16, 0] }}
               transition={{ repeat: Infinity, duration: 6 }}
               className="absolute right-[-35px] top-[210px] z-0 h-[120px] w-[120px] rounded-full bg-gradient-to-l from-[#FEC107] to-[#FE6A07] lg:right-[10px] lg:top-[235px] lg:h-[140px] lg:w-[140px]"
-            />
+            /> */}
 
             <div className="relative z-10 grid items-start gap-8 lg:grid-cols-[1fr_1.15fr]">
               {/* LEFT CONTENT */}
@@ -120,7 +120,7 @@ const ServiceDetailFour = () => {
             reducing your reliance on paid ads. In fact, studies show that 93%
             of online experiences begin with a search engine, and 75% of users
             never scroll past the first page, making SEO one of the most
-            powerful growth tools for your business. 
+            powerful growth tools for your business.
           </div>
         </div>
 
@@ -181,7 +181,7 @@ const ServiceDetailFour = () => {
                 alt="Service Detail Row 2"
               />
               <div className="text-center text-[24px] pt-4  max-w-[240px]">
-                Authority-building backlinks and brand mentions. 
+                Authority-building backlinks and brand mentions.
               </div>
             </div>
             <div>
@@ -191,7 +191,7 @@ const ServiceDetailFour = () => {
                 alt="Service Detail Row 3"
               />
               <div className="text-center text-[24px] pt-4  max-w-[240px]">
-                Get found in “near me” searches and maps. 
+                Get found in “near me” searches and maps.
               </div>
             </div>
             <div>

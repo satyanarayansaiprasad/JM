@@ -21,14 +21,6 @@ const fadeUp = {
   },
 };
 
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6 },
-  },
-};
 const OurTeam = () => {
   const [text, setText] = useState("");
   const fullText = "The way we build";
@@ -45,7 +37,7 @@ const OurTeam = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="h-full">
+    <div className="h-full w-full overflow-x-hidden">
       <motion.div
         className="lg:h-[calc(100vh-100px)] h-[250px] w-full relative"
         variants={fadeUp}
@@ -71,7 +63,7 @@ const OurTeam = () => {
         <div className="lg:w-[274px] w-[100px] h-[100px] left-[20px] bottom-0 lg:left-[161px] absolute lg:h-[274px] rounded-full bg-[#39AEB9]" />
 
         <motion.div
-          className="lg:w-[487px] lg:h-[487px] w-[140px] right-[20px] h-[140px] bottom-0 lg:bottom-[-10px] lg:right-[50px] absolute rounded-full 
+          className="lg:w-[487px] lg:h-[487px] w-[140px] right-[20px] h-[140px] bottom-0 lg:bottom-[-10px] lg:right-[50px] absolute rounded-full overflow-hidden 
 bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-center"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}

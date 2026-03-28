@@ -1,5 +1,4 @@
 import React from "react";
-import servicePerson1 from "../assets/service-person-color.png";
 import { motion } from "framer-motion";
 import servicedetailrow1 from "../assets/service-detail2-row1.png";
 import servicedetailrow2 from "../assets/service-detail2-row2.png";
