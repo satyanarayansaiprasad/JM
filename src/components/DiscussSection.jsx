@@ -27,7 +27,7 @@ const DiscussSection = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="relative w-full md:h-dvh  md:py-20 py-6 overflow-hidden">
+    <div className="relative w-full lg:h-[130vh]  md:py-20 py-6 overflow-hidden">
       {/* TITLE */}
       <div className="md:block hidden">
         <div className="top-10 left-20 absolute ">
