@@ -150,6 +150,7 @@ const Services = () => {
 
         {/* CARD 3 */}
         <motion.div
+          onClick={() => navigation("/services-detail-3")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"

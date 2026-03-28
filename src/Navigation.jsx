@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import CaseStudies from "./pages/CardDetails";
 import ServiceDetails from "./pages/ServiceDetails";
 import ServiceDetailTwo from "./pages/ServiceDetailTwo";
+import ServiceDetailThree from "./pages/ServiceDetailThree";
 
 export const NavigationRoute = () => {
   return (
@@ -24,6 +25,7 @@ export const NavigationRoute = () => {
         <Route path="/services-details" element={<ServiceDetails />} />
         <Route path="/services-details" element={<ServiceDetails />} />
         <Route path="/services-detail-2" element={<ServiceDetailTwo />} />
+        <Route path="/services-detail-3" element={<ServiceDetailThree />} />
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
