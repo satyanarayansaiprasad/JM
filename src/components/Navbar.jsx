@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuItemsLeft = [
-    { name: "Service", path: "/service" },
+    { name: "Service", path: "/services" },
     { name: "Our Team", path: "/our-team" },
     { name: "Home", path: "/" },
   ];
