@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Works from "./pages/Works";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CardDetails";
+import ServiceDetails from "./pages/ServiceDetails";
 
 export const NavigationRoute = () => {
   return (
@@ -18,8 +19,9 @@ export const NavigationRoute = () => {
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/works" element={<Works />} />
-          <Route path="/services" element={<Services />} />
-      
+        <Route path="/services" element={<Services />} />
+        <Route path="/services-details" element={<ServiceDetails />} />
+
         <Route path="/case-studies" element={<CaseStudies />} />
       </Routes>
       <Footer />

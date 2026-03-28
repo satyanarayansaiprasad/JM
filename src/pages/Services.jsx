@@ -4,6 +4,7 @@ import servicePerson1 from "../assets/service-person1.png";
 import trump from "../assets/trump.png";
 import akshay from "../assets/akshay.png";
 import rajni from "../assets/rajni.png";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -15,6 +16,7 @@ const fadeUp = {
 };
 
 const Services = () => {
+  const navigation = useNavigate();
   return (
     <div className="h-full pb-10">
       {/* HERO */}
@@ -43,6 +45,7 @@ const Services = () => {
       <div className="space-y-16 hidden lg:block">
         {/* CARD 1 */}
         <motion.div
+          onClick={() => navigation("/services-details")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -67,8 +70,8 @@ const Services = () => {
               />
             </motion.div>
 
-            <div className="absolute top-[10px] right-0 w-full lg:w-[45%]">
-              <h1 className="text-[40px] lg:text-[72px] font-extrabold leading-[1]">
+            <div className="absolute top-[10px] right-[-50px] w-full lg:w-[55%]">
+              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
                 SOCIAL MEDIA
                 <span className="block text-[#FEC107]">MARKETING</span>
               </h1>
@@ -113,12 +116,12 @@ const Services = () => {
                 src={trump}
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                className="absolute bottom-0 left-0 h-[390px]"
+                className="absolute bottom-0 left-[-50px] h-[390px]"
               />
             </motion.div>
 
-            <div className="absolute top-[10px] right-0 w-full lg:w-[45%]">
-              <h1 className="text-[40px] lg:text-[72px] font-extrabold leading-[1]">
+            <div className="absolute top-[10px] right-[100px] w-full lg:w-[45%]">
+              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
                 PERFORMANCE
                 <span className="block text-[#FEC107]">MARKETING</span>
               </h1>
@@ -167,7 +170,7 @@ const Services = () => {
             </motion.div>
 
             <div className="absolute top-[10px] left-0 w-full lg:w-[45%]">
-              <h1 className="text-[40px] lg:text-[72px] font-extrabold leading-[1]">
+              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
                 WEBSITE
                 <span className="block text-[#FEC107]">DEVELOPEMENT</span>
               </h1>
@@ -217,8 +220,8 @@ const Services = () => {
               />
             </motion.div>
 
-            <div className="absolute top-[10px] left-0 w-full lg:w-[45%]">
-              <h1 className="text-[40px] lg:text-[72px] font-extrabold leading-[1]">
+            <div className="absolute top-[10px] left-0 w-full lg:w-[90%]">
+              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
                 SEARCH ENGINE
                 <span className="block text-[#FEC107]">OPTIMIZATION</span>
               </h1>

@@ -23,3 +23,8 @@
   font-family: "Sage";
   src: url("/public/fonts/Sage.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/public/fonts/Helvetica_Now_Display.ttf") format("truetype");
+}

@@ -16,6 +16,7 @@ export default {
         script: ["Kensington", "cursive"],
         body: ["MontserratItalic", "sans-serif"], // for paragraph
         fancy: ["Sage", "cursive"], // extra font
+        sans: ["Helvetica", "sans-serif"],
       },
       keyframes: {
         marquee: {
