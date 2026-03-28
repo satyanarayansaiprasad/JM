@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import OurTeam from "./pages/OurTeam";
 import Contact from "./pages/Contact";
 import Works from "./pages/Works";
+import CaseStudies from "./pages/CardDetails";
 
 export const NavigationRoute = () => {
   return (
@@ -16,6 +17,7 @@ export const NavigationRoute = () => {
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
       </Routes>
       <Footer />
     </Router>
