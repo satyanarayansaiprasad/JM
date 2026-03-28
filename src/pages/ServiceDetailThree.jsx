@@ -1,11 +1,12 @@
 import React from "react";
-import servicePerson1 from "../assets/service-person-color.png";
+import akshay from "../assets/akshay3.png";
 import { motion } from "framer-motion";
-import servicedetailrow1 from "../assets/service-detail-row1.png";
-import servicedetailrow2 from "../assets/service-detail-row2.png";
-import servicedetailrow3 from "../assets/service-detail-row3.png";
-import servicedetailrow4 from "../assets/service-detail-row4.png";
-import servicedetailrow5 from "../assets/service-detail-row5.png";
+import servicedetailrow1 from "../assets/service-detail3-row1.png";
+import servicedetailrow2 from "../assets/service-detail3-row2.png";
+import servicedetailrow3 from "../assets/service-detail3-row3.png";
+import servicedetailrow4 from "../assets/service-detail3-row4.png";
+import servicedetailrow5 from "../assets/service-detail3-row5.png";
+import servicedetailrow6 from "../assets/service-detail3-row6.png";
 import servicerDetailPerson1 from "../assets/service-detail-person-1.png";
 import Banner from "../components/Banner";
 
@@ -42,7 +43,7 @@ const ServiceDetailThree = () => {
 
               {/* IMAGE (NOW ABOVE CARD ✅) */}
               <motion.img
-                src={servicePerson1}
+                src={akshay}
                 alt="person"
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -54,8 +55,8 @@ const ServiceDetailThree = () => {
             {/* TEXT (TOP MOST) */}
             <div className="absolute z-40 top-[10px] right-[-80px] w-full lg:w-[60%]">
               <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
-                SOCIAL MEDIA
-                <span className="block text-[#FEC107]">MARKETING</span>
+                WEBSITE
+                <span className="block text-[#FEC107]">DEVELOPMENT</span>
               </h1>
             </div>
 
@@ -63,10 +64,12 @@ const ServiceDetailThree = () => {
             <div className="absolute bottom-0 right-0 z-40">
               <div className="max-w-sm text-right">
                 <p className="text-lg text-gray-600">
-                  <span className="text-[#2FA4A9] font-semibold block">
-                    Your Brand,
+                  <span className="text-black  block">
+                    Your Website is Your Digital Shopfront –
                   </span>
-                  Everywhere Your Customers Are
+                  <span className="text-[#2FA4A9] font-semibold">
+                    Let’s Build One That Sells.
+                  </span>
                 </p>
               </div>
             </div>
@@ -90,32 +93,34 @@ const ServiceDetailThree = () => {
         <div className="flex justify-end pb-10 items-end">
           <div className="max-w-[605px] pr-[141px]">
             <div className="font-body text-[24px] z-20">
-              We create strategies, content, and campaigns that not only engage
-              your audience but also convert them into loyal customers.
+              Your Website is Your Digital Shopfront Let’s Build One That Sells.
+              We design & develop websites that don’t just look good, but also
+              perform fast, secure, and built to convert visitors into
+              customers.
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full mt-4 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
             >
-              Grow My Brand Online
+              Build My Website
             </motion.button>
           </div>
         </div>
 
         <div className="px-20 pb-10">
           <div className="text-[32px] font-body text-[#39AEB9]">
-            Why Social Media Marketing Matters?
+            Why Your Business Needs a Great Website?
           </div>
           <div className="pt-4 text-[24px] max-w-[936px] font-body">
-            Social media today is much more than a platform for engagement; it's
-            a powerful engine for business growth. Brands without a strong
-            social presence risk missing out on valuable leads, customer trust,
-            and potential sales. Meanwhile, your competitors are already active,
-            connecting with the very audience you want to reach. With over 3.7
-            billion people using social media globally, your customers are
-            already online. The question is, will they find you or your
-            competitors first?
+             In today’s digital-first world, your website is often the very
+            first interaction customers have with your brand. Research shows
+            that visitors form an opinion in just 3 seconds. If your website
+            looks outdated, loads slowly, or feels confusing, you’re not just
+            losing attention, you’re losing potential sales. Over 75% of users
+            judge a company’s credibility based on its website design. A
+            professionally built, modern, and user-friendly website instantly
+            builds trust, captures leads, and fuels business growth.
           </div>
         </div>
 
@@ -124,7 +129,7 @@ const ServiceDetailThree = () => {
             <div>
               <span className="text-[#F6CB12] leading-[0.7] font-sans font-[700] text-[100px]">
                 the way we
-                <br /> market
+                <br /> develop
               </span>{" "}
               <span className="font-script text-[90px] leading-[0.7] text-[#F6CB12]">
                 {" "}
@@ -144,70 +149,80 @@ const ServiceDetailThree = () => {
         </div>
 
         <div className="text-center pt-10 text-[#39AEB9] font-body text-[32px]">
-          Why Jugadu Marketers Are the Perfect Social Media Partner?
+          Why Jugadu is the Perfect Website Partner?
         </div>
 
         <div className="text-center pt-4  text-[24px] leading-[1] max-w-[936px] mx-auto font-body">
-          We don&apos;t just post content, we create{" "}
-          <span className="text-[64px] font-semibold">campaigns</span> that grow
-          your brand, engage your audience, and drive real business results.
-          Here&apos;s how{" "}
+          We believe a website{" "}
+          <span className="text-[64px] font-semibold"></span> should do more
+          than just look good — it should build trust, engage visitors, and
+          drive sales. That’s why our approach to web development combines
+          creativity, technology, and strategy to deliver
           <span className="font-semibold text-[48px] text-[#FEC107]">
-            we do
-          </span>{" "}
-          it:
+            results
+          </span>
         </div>
 
         <div className="flex justify-center items-center py-36  px-20">
           <div className="flex">
             <div>
               <img
-                className="h-[175px] w-[240px]"
+                className="h-[175px] w-[240px] object-contain"
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
               <div className="text-center text-[24px] pt-4">
-                Eye-catching graphics, videos, and posts that get noticed
+                No templates, only websites as unique as your brand.
               </div>
             </div>
             <div>
               <img
-                className="h-[175px] w-[240px]"
+                className="h-[175px] w-[240px] object-contain"
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
               <div className="text-center text-[24px] pt-4">
-                Custom plans for Instagram, Facebook, LinkedIn, and more.
+                Flawless on mobile, desktop & everywhere in between.
               </div>
             </div>
             <div>
               <img
-                className="h-[175px] w-[240px]"
+                className="h-[175px] w-[240px] object-contain"
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
               <div className="text-center text-[24px] pt-4">
-                Build relationships, respond fast, keep your audience engaged.
+                Smart online stores built to sell.
               </div>
             </div>
             <div>
               <img
-                className="h-[175px] w-[240px]"
+                className="h-[175px] w-[240px] object-contain"
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
               <div className="text-center text-[24px] pt-4">
-                Track, analyze, and optimize every campaign.
+                Campaign-ready pages that actually convert.
               </div>
             </div>
             <div>
               <img
-                className="h-[175px] w-[240px]"
+                className="h-[175px] w-[240px] object-contain"
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
               <div className="text-center text-[24px] pt-4">
-                Smart ads that deliver measurable ROI.
+                Smooth, simple, and customer-friendly.
+              </div>
+            </div>
+            <div>
+              <img
+                className="h-[175px] w-[240px] object-contain"
+                src={servicedetailrow6}
+                alt="Service Detail Row 5"
+              />
+              <div className="text-center text-[24px] pt-4">
+                We don’t vanish after launch, we stay.
               </div>
             </div>
           </div>
