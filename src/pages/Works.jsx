@@ -81,11 +81,15 @@ const Works = () => {
             className="relative w-full max-w-[488px] mx-auto"
           >
             <div className="h-[300px] lg:h-[412px] w-full bg-[#EBEBEB] rounded-3xl flex flex-col items-center pt-6">
-              <img src={Card1logo} className="object-contain px-6 pt-10" />
+              <img
+                src={Card1logo}
+                className="object-contain px-6 pt-10"
+                alt="img"
+              />
             </div>
 
             <div className="w-[280px] h-[280px] lg:w-[470px] lg:h-[470px] bg-[#E42425] rounded-full mx-auto -mt-[100px] lg:-mt-[140px] flex items-end justify-center">
-              <img src={Card1bg} className="object-contain" />
+              <img src={Card1bg} className="object-contain" alt="img" />
             </div>
           </motion.div>
 
@@ -128,13 +132,18 @@ const Works = () => {
             className="relative w-full max-w-[488px] mx-auto"
           >
             <div className="h-[300px] lg:h-[412px] w-full bg-[#EBEBEB] rounded-3xl flex pt-6 justify-center">
-              <img src={Card3Logo} className="h-[120px] lg:h-[150px]" />
+              <img
+                src={Card3Logo}
+                className="h-[120px] lg:h-[150px]"
+                alt="img"
+              />
             </div>
 
             <div className="w-[280px] h-[280px] lg:w-[470px] lg:h-[470px] bg-[#18B400] rounded-full mx-auto -mt-[100px] lg:-mt-[140px] flex items-end justify-center">
               <img
                 src={Card3bg}
                 className="h-[300px] lg:h-[563px] object-contain"
+                alt="img"
               />
             </div>
           </motion.div>
@@ -146,13 +155,18 @@ const Works = () => {
             className="relative w-full max-w-[488px] mx-auto"
           >
             <div className="h-[300px] lg:h-[412px] w-full bg-[#EBEBEB] rounded-3xl flex pt-6 justify-center">
-              <img src={Card4Logo} className="h-[120px] lg:h-[147px]" />
+              <img
+                src={Card4Logo}
+                className="h-[120px] lg:h-[147px]"
+                alt="img"
+              />
             </div>
 
             <div className="w-[280px] h-[280px] lg:w-[470px] lg:h-[470px] bg-[#25517E] rounded-full mx-auto -mt-[100px] lg:-mt-[140px] flex items-end justify-center">
               <img
                 src={Card4bg}
                 className="h-[250px] lg:h-[389px] object-contain"
+                alt="img"
               />
             </div>
           </motion.div>
