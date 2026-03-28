@@ -27,7 +27,7 @@ const DiscussSection = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className="relative w-full lg:h-[130vh]  md:py-20 py-6 overflow-hidden">
+    <div className="relative w-full lg:h-[130vh] border-2  md:py-20 py-6 overflow-hidden">
       {/* TITLE */}
       <div className="md:block hidden">
         <div className="top-10 left-20 absolute ">
@@ -77,9 +77,9 @@ const DiscussSection = () => {
           PICTURE ABHI BAAKI HAI, BOSS
         </div>
 
-        <div className="absolute top-[200px] animate-on-scroll right-[485px] z-10 w-40 h-40 bg-teal-500 text-white rounded-full flex items-center justify-center text-center p-4 font-bold">
+        {/* <div className="absolute top-[200px] animate-on-scroll right-[485px] z-10 w-40 h-40 bg-teal-500 text-white rounded-full flex items-center justify-center text-center p-4 font-bold">
           CHHOTA PACKET, BADA DHAMAKA
-        </div>
+        </div> */}
 
         <div className="absolute bottom-[300px] animate-on-scroll left-10 w-40 h-40 z-10 bg-orange-500 text-white rounded-full flex items-center justify-center text-center p-4 font-bold">
           IDEAS KI FACTORY – HAR IDEA JUGADU STYLE
@@ -96,19 +96,22 @@ const DiscussSection = () => {
         {/* IMAGES */}
 
         {/* CENTER */}
-        <img
-          src={person1}
-          className="absolute top-20  left-1/2 -translate-x-1/2 w-52"
-          alt="img"
-        />
-        <p className="absolute top-[485px] left-1/2 -translate-x-1/2 text-sm">
-          3+ Years Experience
-        </p>
+        <div className="w-[243px] z-10 h-[470px] absolute top-[70px] overflow-visible left-1/2 -translate-x-1/2">
+          <div className="relative">
+            <img src={person1} className=" w-[243px] h-[469px]" alt="img" />
+            <p className="absolute bottom-[-30px] left-1/2 font-semibold   -translate-x-1/2 whitespace-nowrap text-sm">
+              3+ Years Experience
+            </p>
+            <div className="absolute top-[150px] animate-on-scroll right-[-125px] z-10 w-40 h-40 bg-teal-500 text-white rounded-full flex items-center justify-center text-center p-4 font-bold">
+              CHHOTA PACKET, BADA DHAMAKA
+            </div>
+          </div>
+        </div>
 
         {/* LEFT */}
         <img
           src={person3}
-          className="absolute bottom-36 left-[150px] w-52"
+          className="absolute w-[385px] h-[501px] top-1/2 -translate-y-1/2 left-[30px]"
           alt="img"
         />
         <p className="absolute bottom-[240px] left-[100px] text-sm">
@@ -118,7 +121,7 @@ const DiscussSection = () => {
         {/* RIGHT TOP */}
         <img
           src={person2}
-          className="absolute top-32 right-16 w-[300px]"
+          className="absolute top-32 right-0 w-[504px] h-[504px]"
           alt="img"
         />
         <p className="absolute top-[100px] right-[150px] text-sm">
@@ -128,7 +131,7 @@ const DiscussSection = () => {
         {/* BOTTOM CENTER */}
         <img
           src={person4}
-          className="absolute bottom-0 left-[500px]  w-48"
+          className="absolute bottom-0 left-[500px]  w-[300px] h-[440px]"
           alt="img"
         />
         <p className="absolute bottom-10 left-[610px] text-sm">
@@ -138,7 +141,7 @@ const DiscussSection = () => {
         {/* RIGHT BOTTOM */}
         <img
           src={person5}
-          className="absolute bottom-0 right-[200px] w-48"
+          className="absolute bottom-0 right-[200px] w-[206px] h-[405px]"
           alt="img"
         />
         <p className="absolute bottom-4 right-36 text-sm">
