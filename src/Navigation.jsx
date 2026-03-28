@@ -8,6 +8,7 @@ import Works from "./pages/Works";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CardDetails";
 import ServiceDetails from "./pages/ServiceDetails";
+import ServiceDetailTwo from "./pages/ServiceDetailTwo";
 
 export const NavigationRoute = () => {
   return (
@@ -21,6 +22,11 @@ export const NavigationRoute = () => {
         <Route path="/works" element={<Works />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services-details" element={<ServiceDetails />} />
+        <Route path="/services-details" element={<ServiceDetails />} />
+        <Route path="/services-detail-2" element={<ServiceDetailTwo />} />
+        {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
+        {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
+        {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
 
         <Route path="/case-studies" element={<CaseStudies />} />
       </Routes>
