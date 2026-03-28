@@ -40,7 +40,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-16 hidden lg:block">
         {/* CARD 1 */}
         <motion.div
           variants={fadeUp}
@@ -244,6 +244,202 @@ const Services = () => {
             </div>
           </div>
         </motion.div>
+      </div>
+      <div>
+        {/* MOBILE SERVICES (HIDDEN ON LARGE SCREENS) */}
+        <div className=" space-y-10 lg:hidden px-10 pt-10">
+          {/* CARD 1 */}
+          <div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="w-full relative"
+            >
+              <div className="relative rounded-[30px] h-[180px] bg-[#e9e9e9] overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+              </div>
+
+              <motion.img
+                src={servicePerson1}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute bottom-0 "
+              />
+            </motion.div>
+            <div className=" w-full flex justify-center">
+              <h1 className="text-[30px] font-extrabold pt-2 font-heading text-left leading-[1]">
+                SOCIAL MEDIA
+                <span className="block text-[#FEC107]">MARKETING</span>
+              </h1>
+            </div>
+
+            <div className="pt-4">
+              <div className="max-w-sm text-right">
+                <p className="text-lg text-gray-600">
+                  <span className="text-[#2FA4A9] font-semibold block">
+                    Your Brand,
+                  </span>
+                  Everywhere Your Customers Are
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
+                >
+                  Grow My Brand Online
+                </motion.button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="w-full relative "
+            >
+              <div className="relative rounded-[30px] h-[180px] bg-[#e9e9e9] overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+              </div>
+
+              <motion.img
+                src={trump}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute bottom-0 right-6 "
+              />
+            </motion.div>
+            <div className=" w-full flex justify-center">
+              <h1 className="text-[30px] font-extrabold pt-2 font-heading text-left leading-[1]">
+                PERFORMANCE
+                <span className="block text-[#FEC107]">MARKETING</span>
+              </h1>
+            </div>
+
+            <div className="pt-4">
+              <div className="max-w-sm text-right">
+                <p className="text-lg text-gray-600">
+                  <span className="text-black block">
+                    Every Clicks Count: Count Your Business with
+                  </span>
+                  <span className="font-semibold text-[#2FA4A9] ">
+                    Data-Driven Campaigns
+                  </span>
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
+                >
+                  Start Performance Campaigns
+                </motion.button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="w-full relative"
+            >
+              <div className="relative rounded-[30px] h-[180px] bg-[#e9e9e9] overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+              </div>
+
+              <motion.img
+                src={akshay}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute bottom-[-30px] "
+              />
+            </motion.div>
+            <div className=" w-full pt-6 flex justify-center">
+              <h1 className="text-[30px] font-extrabold pt-2 font-heading text-left leading-[1]">
+                WEBSITE
+                <span className="block text-[#FEC107]">DEVELOPEMENT</span>
+              </h1>
+            </div>
+
+            <div className="pt-4">
+              <div className="max-w-sm text-right">
+                <p className="text-lg text-gray-600 text-left">
+                  <span className="text-black block">
+                    Your Website is Your Digital Shopfront–
+                  </span>
+                  <span className="font-semibold text-[#2FA4A9] ">
+                    Let’s Build One That Sells.
+                  </span>
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
+                >
+                  Build My Website
+                </motion.button>
+              </div>
+            </div>
+          </div>
+          <div className="pt-10">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="w-full relative"
+            >
+              <div className="relative rounded-[30px] h-[180px] bg-[#e9e9e9] overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+              </div>
+
+              <motion.img
+                src={rajni}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute bottom-[0px] h-[261px] w-[181px] left-[20%] "
+              />
+            </motion.div>
+            <div className=" w-full pt-6 flex justify-center">
+              <h1 className="text-[30px] font-extrabold pt-2 font-heading text-left leading-[1]">
+                SEARCH ENGINE
+                <span className="block text-[#FEC107]">optimization</span>
+              </h1>
+            </div>
+
+            <div className="pt-4">
+              <div className="max-w-sm text-right">
+                <p className="text-lg text-gray-600 text-left">
+                  <span className="text-black block">
+                    Be Visible Where Your
+                  </span>
+                  <span className="font-semibold text-[#2FA4A9] ">
+                    Customers Are Searching
+                  </span>
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
+                >
+                  Rank Us Higher
+                </motion.button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
