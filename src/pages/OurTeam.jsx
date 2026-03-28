@@ -37,9 +37,9 @@ const OurTeam = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="h-full w-full overflow-x-hidden">
+    <div className="h-full w-full overflow-x-hidden overflow-y-hidden">
       <motion.div
-        className="lg:h-[calc(100vh-100px)] h-[250px] w-full relative"
+        className="lg:h-[calc(100vh-100px)] h-[260px] w-full relative"
         variants={fadeUp}
         initial="hidden"
         animate="show"
@@ -89,12 +89,12 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
           </svg>
         </motion.div>
 
-        <div className="lg:text-[128px] text-[48px] left-[10px] top-0 lg:top-[30px] z-10 lg:left-[74px] absolute font-heading leading-none">
+        <div className="lg:text-[128px] text-[48px] left-[10px] top-0 lg:top-[80px] z-10 lg:left-[74px] absolute font-heading leading-none">
           OUR <br />
           <span className="text-[#FEC107]">TEAM</span>
         </div>
 
-        <div className="lg:text-[190px] text-[50px] top-[10px] lg:top-[30px] z-0 right-[10px] lg:right-[104px] absolute font-script leading-none">
+        <div className="lg:text-[190px] text-[50px] top-[10px] lg:top-[80px] z-0 right-[10px] lg:right-[104px] absolute font-script leading-none">
           {text}
         </div>
       </motion.div>
