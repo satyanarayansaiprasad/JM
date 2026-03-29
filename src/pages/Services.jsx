@@ -5,6 +5,7 @@ import trump from "../assets/trump.png";
 import akshay from "../assets/akshay.png";
 import rajni from "../assets/rajni.png";
 import { useNavigate } from "react-router-dom";
+import Banner from "../components/Banner";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -45,7 +46,7 @@ const Services = () => {
       <div className="space-y-16 hidden lg:block">
         {/* CARD 1 */}
         <motion.div
-          onClick={() => navigation("/services-details")}
+          // onClick={() => navigation("/services-details")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -87,6 +88,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-details")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -100,7 +102,7 @@ const Services = () => {
 
         {/* CARD 2 */}
         <motion.div
-          onClick={() => navigation("/services-detail-2")}
+          // onClick={() => navigation("/services-detail-2")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -138,6 +140,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-2")}
                   whileHover={{ scale: 1.05 }}
                   className="mt-6 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
                 >
@@ -150,7 +153,7 @@ const Services = () => {
 
         {/* CARD 3 */}
         <motion.div
-          onClick={() => navigation("/services-detail-3")}
+          // onClick={() => navigation("/services-detail-3")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -188,6 +191,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-3")}
                   whileHover={{ scale: 1.05 }}
                   className="mt-6 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
                 >
@@ -200,7 +204,7 @@ const Services = () => {
 
         {/* ✅ CARD 4 (RAJNI - FIXED) */}
         <motion.div
-          onClick={() => navigation("/services-detail-4")}
+          // onClick={() => navigation("/services-detail-4")}
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -240,6 +244,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-4")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -257,7 +262,7 @@ const Services = () => {
           {/* CARD 1 */}
           <div>
             <motion.div
-              onClick={() => navigation("/services-details")}
+              // onClick={() => navigation("/services-details")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -293,6 +298,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-details")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -304,7 +310,7 @@ const Services = () => {
           </div>
           <div>
             <motion.div
-              onClick={() => navigation("/services-detail-2")}
+              // onClick={() => navigation("/services-detail-2")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -342,6 +348,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-2")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -353,7 +360,7 @@ const Services = () => {
           </div>
           <div>
             <motion.div
-              onClick={() => navigation("/services-detail-3")}
+              // onClick={() => navigation("/services-detail-3")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -391,6 +398,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-3")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -402,7 +410,7 @@ const Services = () => {
           </div>
           <div className="pt-10">
             <motion.div
-              onClick={() => navigation("/services-detail-4")}
+              // onClick={() => navigation("/services-detail-4")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -440,6 +448,7 @@ const Services = () => {
                 </p>
 
                 <motion.button
+                  onClick={() => navigation("/services-detail-4")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="mt-2 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
@@ -450,6 +459,9 @@ const Services = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="lg:pt-32 pt-20">
+        <Banner />
       </div>
     </div>
   );
