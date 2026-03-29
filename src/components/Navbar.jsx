@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full py-4 flex justify-center">
-      <div className="bg-black w-[98%] md:w-auto gap-10 rounded-full px-6 md:px-10 py-2 flex items-center justify-between text-white relative">
+      <div className="bg-black w-[98%] md:w-auto gap-10 lg:rounded-full px-6 md:px-10 py-2 flex items-center justify-between text-white relative">
         {/* MOBILE MENU BUTTON */}
         <div className="md:hidden flex items-center justify-end w-full">
           <button onClick={() => setOpen(!open)}>
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* MOBILE MENU */}
         {open && (
-          <div className="absolute top-16 left-0 w-full bg-black rounded-2xl flex flex-col items-center gap-4 py-6 md:hidden z-50">
+          <div className="fixed inset-0 w-full h-screen bg-black flex flex-col items-center justify-center gap-6 z-[999] md:hidden">
             {[...menuItemsLeft, ...menuItemsRight].map((item) => {
               const isActive = location.pathname === item.path;
 
@@ -90,8 +90,10 @@ const Navbar = () => {
                     navigate(item.path);
                     setOpen(false);
                   }}
-                  className={`cursor-pointer text-sm px-4 py-2 rounded-full ${
-                    isActive ? "bg-yellow-400 text-black" : "text-white"
+                  className={`cursor-pointer text-xl px-6 py-3 rounded-full transition ${
+                    isActive
+                      ? "bg-yellow-400 text-black"
+                      : "text-white hover:text-yellow-400"
                   }`}
                 >
                   {item.name}

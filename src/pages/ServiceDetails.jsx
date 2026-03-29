@@ -103,6 +103,16 @@ const ServiceDetails = () => {
             </h1>
           </div>
         </div>
+        <div className=" lg:hidden block text-center w-full">
+          <div className="max-w-sm text-center mx-auto">
+            <p className="text-lg text-gray-600 pt-2">
+              <span className="text-[#2FA4A9] font-semibold block">
+                Your Brand,
+              </span>
+              Everywhere Your Customers Are
+            </p>
+          </div>
+        </div>
         <div className="lg:flex lg:justify-end pb-10 lg:items-end lg:pt-0 pt-6">
           <div className="lg:max-w-[605px] w-full lg:pr-[101px] lg:px-0 px-6">
             <div className="font-body text-justify  lg:text-[24px] z-20">
@@ -176,55 +186,64 @@ const ServiceDetails = () => {
           it:
         </div>
 
-        <div className="flex justify-center items-center lg:py-36 py-10  lg: px-20">
-          <div className="lg:flex ">
-            <div>
+        <div className="flex justify-center items-center lg:py-36 py-10 lg:px-20 px-6">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-6">
+            {/* ITEM 1 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[200px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[160px] object-contain"
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="text-center lg:text-[24px] lg:pt-4">
+              <div className="text-[16px] lg:text-[16px] pt-3">
                 Eye-catching graphics, videos, and posts that get noticed
               </div>
             </div>
-            <div className="lg:pt-0 pt-10">
+
+            {/* ITEM 2 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[200px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[160px] object-contain"
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="text-center lg:text-[24px] lg:pt-4">
+              <div className="text-[16px] lg:text-[16px] pt-3">
                 Custom plans for Instagram, Facebook, LinkedIn, and more.
               </div>
             </div>
-            <div className="lg:pt-0 pt-10">
+
+            {/* ITEM 3 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[200px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[160px] object-contain"
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="text-center lg:text-[24px] lg:pt-4">
+              <div className="text-[16px] lg:text-[16px] pt-3">
                 Build relationships, respond fast, keep your audience engaged.
               </div>
             </div>
-            <div className="lg:pt-0 pt-10">
+
+            {/* ITEM 4 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[200px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[160px] object-contain"
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="text-center lg:text-[24px] lg:pt-4">
+              <div className="text-[16px] lg:text-[16px] pt-3">
                 Track, analyze, and optimize every campaign.
               </div>
             </div>
-            <div className="lg:pt-0 pt-10">
+
+            {/* ITEM 5 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[200px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[160px] object-contain"
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
-              <div className="text-center lg:text-[24px] lg:pt-4">
+              <div className="text-[16px] lg:text-[16px] pt-3">
                 Smart ads that deliver measurable ROI.
               </div>
             </div>

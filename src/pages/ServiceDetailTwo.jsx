@@ -21,13 +21,36 @@ const fadeUp = {
 const ServiceDetailTwo = () => {
   return (
     <div>
-      <div className="pt-20">
+      <div className="lg:hidden block">
+        <div className="relative w-full h-[260px] lg:h-[750px] overflow-hidden flex items-center justify-center">
+          <div className="absolute left-[95px] top-[15px] lg:left-[390px] lg:top-[20px] w-[80px] h-[80px] lg:w-[274px] lg:h-[274px] rounded-full bg-gradient-to-l from-[#FEC107] to-[#FE6A07]" />
+          <div className="absolute right-[55px] bottom-[18px] lg:right-[170px] lg:bottom-[0px] w-[75px] h-[75px] lg:w-[274px] lg:h-[274px] rounded-full bg-[#43b9c8]" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 flex items-center justify-center"
+          >
+            <h1 className="w-full flex justify-between items-center font-black text-black leading-none text-[240px] lg:text-[750px]">
+              <span>O</span>
+              <span>U</span>
+              <span>R</span>
+            </h1>
+
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-script text-[72px] lg:text-[240px] text-[#f5b400] rotate-[-8deg] z-20 lg:pt-32 pt-10">
+              Services
+            </span>
+          </motion.div>
+        </div>
+      </div>
+      <div className="lg:pt-20 pt-10">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="w-full pt-16 pb-10 px-6 lg:px-20 relative"
+          className="w-full lg:pt-16 pt-10 pb-10 px-6 lg:px-20 relative"
         >
           <div className="max-w-7xl mx-auto relative isolate">
             {/* LEFT CARD */}
@@ -47,36 +70,56 @@ const ServiceDetailTwo = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="absolute bottom-0 left-10 lg:left-0 h-[320px] w-[640px] lg:h-[390px] z-30"
+                className="absolute bottom-0 left-0 lg:left-0 h-[250px] lg:w-[640px] lg:h-[390px] z-30"
               />
             </motion.div>
 
             {/* TEXT (TOP MOST) */}
-            <div className="absolute z-40 top-[10px] right-[-80px] w-full lg:w-[60%]">
-              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
-                PERFORMANCE
-                <span className="block text-[#FEC107]">MARKETING</span>
-              </h1>
-            </div>
+            <div className="lg:block hidden">
+              <div className="absolute z-40 top-[10px] right-[-80px] w-full lg:w-[60%]">
+                <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
+                  PERFORMANCE
+                  <span className="block text-[#FEC107]">MARKETING</span>
+                </h1>
+              </div>
 
-            {/* SUBTEXT */}
-            <div className="absolute bottom-0 right-0 z-40">
-              <div className="max-w-sm text-right">
-                <p className="text-lg text-gray-600">
-                  Every Click Counts: Grow Your Business with
-                  <span className="text-[#2FA4A9] font-semibold block">
-                    Data-Driven Campaigns
-                  </span>
-                </p>
+              {/* SUBTEXT */}
+              <div className="absolute bottom-0 right-0 z-40">
+                <div className="max-w-sm text-right">
+                  <p className="text-lg text-gray-600">
+                    Every Click Counts: Grow Your Business with
+                    <span className="text-[#2FA4A9] font-semibold block">
+                      Data-Driven Campaigns
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* LEFT BLUE CIRCLE */}
           </div>
         </motion.div>
-        <div className="flex justify-end pb-10 items-end">
-          <div className="max-w-[605px] pr-[141px]">
-            <div className="font-body text-[24px] z-20 text-justify">
+        <div className="flex justify-center w-full">
+          <div className="lg:hidden block">
+            <h1 className="text-[30px] lg:text-[72px] font-heading leading-[1]">
+              PERFORMANCE
+              <span className="block text-[#FEC107]">MARKETING</span>
+            </h1>
+          </div>
+        </div>
+        <div className=" lg:hidden block text-center w-full">
+          <div className="max-w-sm text-center mx-auto">
+            <p className="text-lg text-gray-600 pt-2">
+               Every Click Counts: Grow Your Business with
+              <span className="text-[#2FA4A9] font-semibold block">
+                Data-Driven Campaigns
+              </span>
+            </p>
+          </div>
+        </div>
+        <div className="lg:flex justify-end pb-10 items-end lg:pt-0 pt-6">
+          <div className="lg:max-w-[605px] lg:pr-[141px] lg:px-0 px-6 w-full">
+            <div className="font-body  lg:text-[24px] z-20 text-justify">
               We run ROI-focused campaigns across Meta, Google, and other
               platforms to ensure every ad rupee works hard for your business.
             </div>
@@ -89,11 +132,11 @@ const ServiceDetailTwo = () => {
             </motion.button>
           </div>
         </div>
-        <div className="px-20 pb-10">
-          <div className="text-[32px] font-body text-[#39AEB9]">
+        <div className="lg:px-20 px-6 pb-10">
+          <div className="lg:text-[32px] font-body text-[#39AEB9]">
             Why Performance Marketing Matters?
           </div>
-          <div className="pt-4 text-[24px] max-w-[936px] font-body">
+          <div className="pt-4 lg:text-[24px] text-justify lg:max-w-[936px] font-body">
             Traditional advertising can often be costly and unpredictable,with
             little guarantee of results. Performance marketing changes that by
             ensuring you only pay for measurable outcomes such as clicks, leads,
@@ -106,17 +149,17 @@ const ServiceDetailTwo = () => {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <div className="flex items-center">
+          <div className="lg:flex items-center">
             <div>
-              <span className="text-[#F6CB12] leading-[0.7] font-sans font-[700] text-[100px]">
+              <span className="text-[#F6CB12] leading-[0.7] font-sans font-[700] text-[50px] lg:text-[100px]">
                 the way we
                 <br /> market
               </span>{" "}
-              <span className="font-script text-[90px] leading-[0.7] text-[#F6CB12]">
+              <span className="font-script text-[90px] lg:pl-0 pl-4 leading-[0.7] text-[#F6CB12]">
                 {" "}
                 for <br />
                 you
-                <span className="font-body text-[36px] text-black font-semibold leading-[0]">
+                <span className="font-body lg:text-[36px] text-[20px] text-black font-semibold leading-[0]">
                   no body can match
                 </span>
               </span>
@@ -128,67 +171,78 @@ const ServiceDetailTwo = () => {
             />
           </div>
         </div>
-        <div className="text-center pt-10 text-[#39AEB9] font-body text-[32px]">
+        <div className="text-center pt-10 text-[#39AEB9] lg:px-0 px-6 font-body lg:text-[32px]">
           Why Jugadu Marketers Are the Perfect Performance Marketing Partner?
         </div>
-        <div className="text-center pt-4  text-[24px] leading-[1] max-w-[936px] mx-auto font-body">
+        <div className="text-center pt-4  lg:text-[24px] lg:px-0 px-6 leading-[1] lg:max-w-[936px] mx-auto font-body">
           We don’t just run ads, we create campaigns that deliver&nbsp;
-          <span className="text-[64px] font-semibold">measurable results</span>
+          <span className="lg:text-[64px] text-[30px] font-semibold">
+            measurable results
+          </span>
           &nbsp; generate leads, and grow your business. Here's how we make
           every &nbsp;
-          <span className="font-semibold text-[48px] text-[#FEC107]">
+          <span className="font-semibold lg:text-[48px] text-[30px] text-[#FEC107]">
             click count
           </span>
         </div>
-        <div className="flex justify-center items-center py-36  px-20">
-          <div className="flex">
-            <div>
+        <div className="flex justify-center items-center lg:py-36 py-20 px-6 lg:px-10">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-6">
+            {/* ITEM 1 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[190px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[150px] object-contain"
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="text-center font-sans text-[20px] pt-4">
+              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
                 Ads on Facebook, Instagram, LinkedIn that actually convert.
               </div>
             </div>
-            <div>
+
+            {/* ITEM 2 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[190px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[150px] object-contain"
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="text-center font-sans text-[20px] pt-4">
+              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
                 Targeted search and display ads to capture ready-to-buy leads.
               </div>
             </div>
-            <div>
+
+            {/* ITEM 3 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[190px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[150px] object-contain"
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="text-center font-sans text-[20px] pt-4">
+              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
                 Reconnect with visitors who didn’t convert the first time.
               </div>
             </div>
-            <div>
+
+            {/* ITEM 4 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[190px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[150px] object-contain"
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="text-center font-sans text-[20px] pt-4">
-                 Make your landing pages and funnels work harder.
+              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+                Make your landing pages and funnels work harder.
               </div>
             </div>
-            <div>
+
+            {/* ITEM 5 */}
+            <div className="flex flex-col items-center text-center max-w-xs lg:max-w-[190px]">
               <img
-                className="h-[175px] w-[240px] object-contain"
+                className="h-[150px] w-[200px] lg:h-[120px] lg:w-[150px] object-contain"
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
-              <div className="text-center text-[20px] font-sans text-[#0000000] pt-4">
+              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
                 Measure, analyze, and optimize every campaign for maximum ROI.
               </div>
             </div>
