@@ -12,6 +12,7 @@ import Card4Logo from "../assets/card4logo.png";
 import Card1logo from "../assets/card1logo.png";
 import Card1bg from "../assets/card1bg.png";
 import { useNavigate } from "react-router-dom";
+import Banner from "../components/Banner";
 
 const socialLinks = [
   {
@@ -249,6 +250,9 @@ Email: ${email}`;
             </div>
           </motion.div>
         </motion.div>
+      </div>
+      <div className="lg:pt-32 pt-20">
+        <Banner />
       </div>
 
       {/* BOTTOM */}
