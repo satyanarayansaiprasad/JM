@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -15,7 +16,6 @@ const Navbar = () => {
   ];
 
   const menuItemsRight = [
-    // { name: "Clients", path: "/clients" },
     { name: "Our Works", path: "/works" },
     { name: "Contact", path: "/contact-us" },
   ];
@@ -29,7 +29,6 @@ const Navbar = () => {
         onClick={() => navigate(item.path)}
         className="relative cursor-pointer text-sm px-6 py-3"
       >
-        {/* Animated Highlight */}
         {isActive && (
           <motion.div
             layoutId="nav-pill"
@@ -50,11 +49,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full py-4 flex justify-center">
+    <div className="w-full py-4 flex justify-center sticky top-0 z-[1000]">
       <div className="bg-black w-[98%] md:w-auto gap-10 lg:rounded-full px-6 md:px-10 py-3 md:py-2 flex items-center justify-between text-white relative">
         {/* MOBILE MENU BUTTON */}
         <div className="md:hidden flex items-center justify-end w-full">
-          <button onClick={() => setOpen(!open)}>
+          <button onClick={() => setOpen(true)}>
             <FaBars className="text-xl text-yellow-500" />
           </button>
         </div>
@@ -80,6 +79,13 @@ const Navbar = () => {
         {/* MOBILE MENU */}
         {open && (
           <div className="fixed inset-0 w-full h-screen bg-black flex flex-col items-center justify-center gap-6 z-[999] md:hidden">
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-6 right-6 text-2xl text-yellow-500"
+            >
+              <FaTimes />
+            </button>
+
             {[...menuItemsLeft, ...menuItemsRight].map((item) => {
               const isActive = location.pathname === item.path;
 
