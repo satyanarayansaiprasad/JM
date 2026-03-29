@@ -158,7 +158,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                   </h2>
                 </div>
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
                   {/* LEFT TEXT */}
                   <div className="w-1/2 p-6 flex flex-col  text-justify">
                     <p className="text-[14px] text-black/70 leading-relaxed">
@@ -217,7 +217,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
                   {/* LEFT CONTENT */}
                   <div className="w-1/2 p-6 flex flex-col ">
                     <p className="text-[14px] text-black/70 leading-relaxed">
@@ -283,7 +283,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
                   {/* LEFT TEXT */}
                   <div className="w-1/2 p-6 flex flex-col ">
                     <p className="text-[14px] text-black/70 leading-relaxed">
@@ -357,7 +357,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
                   {/* LEFT TEXT */}
                   <div className="w-1/2 p-6 flex flex-col ">
                     <p className="text-[14px] text-black/70 leading-relaxed">
@@ -468,7 +468,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
               {/* LEFT TEXT */}
               <div className="w-1/2 p-6 flex flex-col ">
                 <p className="text-[14px] text-black/70 leading-relaxed">
@@ -533,7 +533,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
               {/* LEFT TEXT */}
               <div className="w-1/2 p-6 flex flex-col ">
                 <p className="text-[14px] text-black/70 leading-relaxed">
@@ -602,7 +602,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] right-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div className="absolute bottom-[-10px] right-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
               {/* LEFT TEXT */}
               <div className="w-1/2 p-6 flex flex-col ">
                 <p className="text-[14px] text-black/70 leading-relaxed">

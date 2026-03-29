@@ -23,11 +23,12 @@ export const NavigationRoute = () => {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/works" element={<Works />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services-details" element={<ServiceDetails />} />
+        {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
         <Route path="/services-details" element={<ServiceDetails />} />
         <Route path="/services-detail-2" element={<ServiceDetailTwo />} />
         <Route path="/services-detail-3" element={<ServiceDetailThree />} />
         <Route path="/services-detail-4" element={<ServiceDetailFour />} />
+
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}
         {/* <Route path="/services-details" element={<ServiceDetails />} /> */}

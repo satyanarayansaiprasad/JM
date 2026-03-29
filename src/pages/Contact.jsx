@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import Banner from "../components/Banner";
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const subjects = [
@@ -137,7 +144,7 @@ const Contact = () => {
               </p>
 
               <div className="space-y-8 text-sm">
-                {[FaInstagram, FaFacebookF, FaLinkedinIn].map((Icon, i) => (
+                {[FaPhoneAlt, FaEnvelope, FaMapMarkerAlt].map((Icon, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -30 }}
@@ -148,10 +155,10 @@ const Contact = () => {
                     <Icon className="text-white text-sm" />
                     <p>
                       {i === 0
-                        ? "+1012 3456 789"
+                        ? "+91 9348777629 / +918144316098"
                         : i === 1
-                          ? "demo@gmail.com"
-                          : "132 Dartmouth Street Boston, Massachusetts 02156 United States"}
+                          ? "jugadumarketers@gmail.com"
+                          : "Plot no- 817/2104, Malipada, Bhubaneswar"}
                     </p>
                   </motion.div>
                 ))}
