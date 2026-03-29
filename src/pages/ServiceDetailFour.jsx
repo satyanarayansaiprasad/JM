@@ -132,7 +132,7 @@ const ServiceDetailFour = () => {
           <div className="lg:text-[32px] lg:text-left text-center font-body text-[#39AEB9]">
             Why SEO Matters?
           </div>
-          <div className="pt-4 lg:text-left text-center text-justify lg:text-[24px] max-w-[936px] font-body">
+          <div className="pt-4 lg:text-left  text-justify lg:text-[24px] max-w-[936px] font-body">
              Most people never go beyond the first page of Google, which means
             if your business isn’t ranking, you’re practically invisible to
             potential customers. SEO is what ensures your brand gets seen where

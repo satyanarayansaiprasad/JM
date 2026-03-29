@@ -12,7 +12,13 @@ import pupun from "../assets/pupun.png";
 import pratyush from "../assets/pratyush.png";
 import teamGroup from "../assets/team-group.png";
 import team2bg from "../assets/team-card-2-bg.png";
-
+import card3bg1 from "../assets/card3bg1.png";
+import card3bg2 from "../assets/card3bg2.png";
+import card4bg1 from "../assets/card3-bg1.png";
+import card4bg2 from "../assets/card3-bg-2.png";
+import colorBall from "../assets/colorBall.png";
+import redCloth from "../assets/red-cloth.png";
+import greenBall from "../assets/greenBall.png";
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   show: {
@@ -224,7 +230,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                       machine running smoothly and moving forward.
                     </p>
 
-                    <p className="mt-4 font-bold text-[12px]">CREATIVE HEAD</p>
+                    <p className="mt-4 font-bold text-[12px]">CO-FOUNDER</p>
                   </div>
 
                   {/* RIGHT SIDE */}
@@ -277,30 +283,48 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute top-0 left-0 w-[700px] h-[380px] bg-[#e6e6e6] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
                   {/* LEFT TEXT */}
                   <div className="w-1/2 p-6 flex flex-col ">
                     <p className="text-[14px] text-black/70 leading-relaxed">
-                      Samaya blends creativity with strategy to deliver
-                      impactful campaigns.
+                      Samay believes two things make work better: urgency and a
+                      well-timed “gali”.
                       <br />
                       <br />
-                      She ensures every idea is executed with precision and
-                      purpose, driving meaningful results.
+                      Between building hype, handling media, and pushing
+                      conversations forward, he brings the kind of energy that
+                      keeps Jugadu Marketers active.
+                      <br />
+                      <br />
+                      Things may start slow… but once Samay gets going, the room
+                      usually gets a lot more lively.
                     </p>
 
                     <p className="mt-4 font-bold text-[12px]">STRATEGIST</p>
                   </div>
 
                   {/* RIGHT SIDE */}
-                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b from-[#39AEB9] to-[#1A4E53]">
+                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
                     {/* Circle */}
-                    <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
 
                     {/* Image */}
                     <img
                       src={person3}
-                      className="h-[300px] object-contain z-10 scale-x-[-1]"
+                      className="h-[380px] object-contain z-30 "
+                      // style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+                    <img
+                      src={card3bg1}
+                      className="h-[380px] right-[-120px] top-[-20px] absolute object-contain z-10 "
+                      // style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+                    <img
+                      src={card3bg2}
+                      className=" h-[300px] top-[0px] left-0 absolute object-contain z-10 "
+                      // style={{ transform: "scaleX(-1)" }}
                       alt=""
                     />
 
@@ -309,30 +333,82 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                       NS
                     </div>
                   </div>
+                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+                    The Hype Specialist
+                  </div>
                 </div>
               </div>
               {/* card 4 */}
-              <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
-                <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
-                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+              <div className="relative group lg:w-[320px] h-[320px]">
+                {/* SMALL CARD */}
+                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
                   <img
                     src={person4}
                     className="absolute bottom-0 left-[20px] lg:left-0 z-20 h-[490px] object-contain"
-                    alt="logo"
+                    alt=""
                   />
 
+                  {/* FONT SAME */}
                   <h2 className="absolute bottom-[-12px] text-[33px] font-heading text-[#F6CB12] z-30">
                     ARYAN
                   </h2>
                 </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
-                  <p className="text-center">
-                    Aryan focuses on execution and innovation, helping deliver
-                    consistent high-quality output.
-                  </p>
+                {/* 🔥 BIG EXPANDED CARD */}
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                  {/* LEFT TEXT */}
+                  <div className="w-1/2 p-6 flex flex-col ">
+                    <p className="text-[14px] text-black/70 leading-relaxed">
+                      A perfect example of Gen-Z — moody sometimes, childish
+                      occasionally, and randomly announcing “Break chahiye.”
+                      <br />
+                      <br />
+                      But when he sits down to edit or direct, something
+                      interesting usually happens.
+                      <br />
+                      <br />
+                      Because once Aryan enters his creative zone, the visuals
+                      tend to come out fantastic.
+                    </p>
+
+                    {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
+                  </div>
+
+                  {/* RIGHT SIDE */}
+                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
+                    {/* Circle */}
+                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
+
+                    {/* Image */}
+                    <img
+                      src={person4}
+                      className=" w-full  z-30 "
+                      // style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+                    <img
+                      src={card4bg1}
+                      className="h-[380px] right-[-0px] top-[-20px] absolute object-contain z-10 "
+                      // style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+                    <img
+                      src={card4bg2}
+                      className="  bottom-[-15px] right-[-90px] absolute object-contain z-0 "
+                      // style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+
+                    {/* Background Text */}
+                    {/* <div className="absolute text-[120px] font-bold text-white/20">
+                      NS
+                    </div> */}
+                  </div>
+                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+                    The Visual Alchemist
+                  </div>
                 </div>
               </div>
             </div>
@@ -374,75 +450,205 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
         {/* LAST ROW */}
         <div className=" lg:flex gap-20">
-          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
-            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
-              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+          <div className="relative group lg:w-[320px] h-[320px]">
+            {/* SMALL CARD */}
+            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
                 src={pratyush}
                 className="absolute bottom-0 z-20 h-[300px]"
-                alt="logo"
+                alt=""
               />
 
-              {/* FONT UNCHANGED */}
+              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[28px] font-bold text-[#F6CB12] z-30">
                 PRATYUSH
               </h2>
             </div>
 
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
-              <p className="text-center">
-                Pratyush contributes with dedication and execution to deliver
-                quality work.
-              </p>
+            {/* 🔥 BIG EXPANDED CARD */}
+            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+              {/* LEFT TEXT */}
+              <div className="w-1/2 p-6 flex flex-col ">
+                <p className="text-[14px] text-black/70 leading-relaxed">
+                  In the internet economy, attention is the real currency.
+                  <br />
+                  <br />
+                  Pratyosh spends his days making sure brands earn it. From
+                  shaping social media presence to managing client
+                  relationships, he ensures brands don’t just appear on feeds —
+                  they stay in people’s minds.
+                </p>
+
+                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
+              </div>
+
+              {/* RIGHT SIDE */}
+              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
+                {/* Circle */}
+                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
+
+                {/* Image */}
+                <img
+                  src={pratyush}
+                  className="h-[390px] object-contain w-full  z-30 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={card3bg1}
+                  className="h-[380px] right-[-90px] top-[-20px] absolute object-contain z-0 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={colorBall}
+                  className=" bottom-[-50px] right-[-20px] absolute object-contain z-10 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+              </div>
+              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+                The Attention Architect
+              </div>
             </div>
           </div>
 
-          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
-            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
-              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+          <div className="relative group lg:w-[320px] h-[320px]">
+            {/* SMALL CARD */}
+            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
                 src={pupun}
                 className="absolute bottom-0 z-20 h-[290px]"
-                alt="logo"
+                alt=""
               />
 
-              {/* FONT UNCHANGED */}
+              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
                 PAPUNU
               </h2>
             </div>
 
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
-              <p className="text-center">
-                Papunu focuses on execution and supports team operations
-                effectively.
-              </p>
+            {/* 🔥 BIG EXPANDED CARD */}
+            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+              {/* LEFT TEXT */}
+              <div className="w-1/2 p-6 flex flex-col ">
+                <p className="text-[14px] text-black/70 leading-relaxed">
+                  Some people notice details. Papun notices the details inside
+                  the details.
+                  <br />
+                  <br />
+                  That obsession keeps Jugadu creatives clean, balanced, and
+                  visually sharp.
+                  <br />
+                  <br />
+                  And sometimes, in the middle of a design discussion, he ends
+                  up dropping insights about the market that make the whole team
+                  rethink things.
+                </p>
+
+                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
+              </div>
+
+              {/* RIGHT SIDE */}
+              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
+                {/* Circle */}
+                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
+
+                {/* Image */}
+                <img
+                  src={pupun}
+                  className="h-[375px] object-contain w-full  z-30 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={card4bg2}
+                  className="h-[380px] right-[-40px] top-[10px] absolute object-contain z-0 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={redCloth}
+                  className=" top-[10px] right-[-20px] absolute object-contain z-10 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+              </div>
+              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[40px] leading-none z-30 ">
+                The Chief Aesthetic Officer
+              </div>
             </div>
           </div>
 
-          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
-            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
-              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+          <div className="relative group lg:w-[320px] h-[320px]">
+            {/* SMALL CARD */}
+            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
                 src={person5}
                 className="absolute bottom-0 left-[32px] lg:left-0 z-20 h-[350px]"
-                alt="logo"
+                alt=""
               />
 
-              {/* FONT UNCHANGED */}
+              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
                 DEBASIS
               </h2>
             </div>
 
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
-              <p className="text-center">
-                Debasis brings consistency and ensures smooth workflow across
-                projects.
-              </p>
+            {/* 🔥 BIG EXPANDED CARD */}
+            <div className="absolute bottom-[-10px] right-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+              {/* LEFT TEXT */}
+              <div className="w-1/2 p-6 flex flex-col ">
+                <p className="text-[14px] text-black/70 leading-relaxed">
+                  In a world where most creatives follow trends, Debasis studies
+                  them… then quietly bends them.
+                  <br />
+                  <br />
+                  From trending audio to the right font and frame, nothing in
+                  his process is random — it’s researched, tested, and refined.
+                  <br />
+                  <br />
+                  He may get confused sometimes, but instead of following
+                  others, he finds his own answers.
+                </p>
+
+                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
+              </div>
+
+              {/* RIGHT SIDE */}
+              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
+                {/* Circle */}
+                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
+
+                {/* Image */}
+                <img
+                  src={person5}
+                  className="h-[375px] object-contain w-full  z-30 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={card4bg2}
+                  className="h-[380px] right-[-40px] top-[20px] absolute object-contain z-0 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+                <img
+                  src={greenBall}
+                  className=" top-[10px] right-[-20px] absolute object-contain z-10 "
+                  // style={{ transform: "scaleX(-1)" }}
+                  alt=""
+                />
+              </div>
+              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[40px] leading-none z-30 ">
+                The Visual Designer
+              </div>
             </div>
           </div>
         </div>
