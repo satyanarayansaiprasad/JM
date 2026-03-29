@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   const menuItemsRight = [
-    { name: "Clients", path: "/clients" },
+    // { name: "Clients", path: "/clients" },
     { name: "Our Works", path: "/works" },
     { name: "Contact", path: "/contact-us" },
   ];

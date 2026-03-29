@@ -78,7 +78,7 @@ const ServiceDetailTwo = () => {
           <div className="max-w-[605px] pr-[141px]">
             <div className="font-body text-[24px] z-20 text-justify">
               We run ROI-focused campaigns across Meta, Google, and other
-              platforms to ensure every ad rupee works hard for your business.  
+              platforms to ensure every ad rupee works hard for your business.
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -124,7 +124,7 @@ const ServiceDetailTwo = () => {
             <img
               src={servicerDetailPerson1}
               alt="Service Detail Person"
-              className="h-[512px] w-[275px]"
+              className="h-[512px] w-[275px] object-contain"
             />
           </div>
         </div>

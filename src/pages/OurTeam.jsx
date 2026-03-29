@@ -55,7 +55,7 @@ const OurTeam = () => {
           animate="show"
         /> */}
         <img
-          className="lg:w-[810px] h-[200px] z-50 lg:h-[607px] bottom-0 left-1/2 transform -translate-x-1/2 object-contain absolute"
+          className="lg:w-[810px] h-[200px] z-40 lg:h-[607px] bottom-0 left-1/2 transform -translate-x-1/2 object-contain absolute"
           src={group}
           alt="Team"
         />

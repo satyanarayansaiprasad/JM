@@ -21,92 +21,71 @@ const ServiceDetailFour = () => {
   return (
     <div>
       <div className="pt-20">
-        <motion.section
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative w-full overflow-hidden px-6 py-12 lg:px-20"
+          className="w-full pt-16 pb-10 px-6 lg:px-20 relative overflow-hidden"
         >
-          <div className="relative mx-auto max-w-7xl">
-            {/* LEFT BLUE CIRCLE */}
-            {/* <motion.div
-              animate={{ y: [0, -16, 0] }}
-              transition={{ repeat: Infinity, duration: 5 }}
-              className="absolute left-[-95px] top-[210px] z-0 h-[120px] w-[120px] rounded-full bg-[#39AEB9] lg:left-[-120px] lg:top-[220px] lg:h-[165px] lg:w-[165px]"
-            /> */}
+          <div className="max-w-7xl mx-auto  flex flex-col lg:flex-row items-center relative">
+            {/* LEFT TEXT */}
+            <div className="w-full absolute  z-40">
+              <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
+                SEARCH ENGINE
+                <span className="block text-[#FEC107] uppercase">
+                  OPTIMIZATION
+                </span>
+              </h1>
 
-            {/* RIGHT ORANGE CIRCLE */}
-            {/* <motion.div
-              animate={{ y: [0, 16, 0] }}
-              transition={{ repeat: Infinity, duration: 6 }}
-              className="absolute right-[-35px] top-[210px] z-0 h-[120px] w-[120px] rounded-full bg-gradient-to-l from-[#FEC107] to-[#FE6A07] lg:right-[10px] lg:top-[235px] lg:h-[140px] lg:w-[140px]"
-            /> */}
-
-            <div className="relative z-10 grid items-start gap-8 lg:grid-cols-[1fr_1.15fr]">
-              {/* LEFT CONTENT */}
-              <div className="pt-4 lg:pt-10">
-                <h1 className="font-heading text-[38px] leading-[0.95] text-black lg:text-[64px]">
-                  SEARCH ENGINE
-                  <span className="block text-[#FEC107]">OPTIMIZATION</span>
-                </h1>
-
-                <div className="mt-3 max-w-[360px]">
-                  <p className="text-[18px] leading-[1.2] text-black lg:text-[20px]">
+              <div className="mt-6 max-w-md">
+                <p className="text-lg text-gray-600">
+                  <span className="text-black block">
                     Climb the Rankings Like a
-                  </p>
-                  <p className="text-[18px] font-semibold leading-[1.2] text-[#2FA4A9] lg:text-[20px]">
+                  </span>
+                  <span className="text-[#2FA4A9] font-semibold">
                     Digital Rockstar.
-                  </p>
-                </div>
-
-                <div className="mt-16 max-w-[520px] lg:mt-20">
-                  <div className="font-body text-[18px] leading-[1.7] text-black/80 lg:text-[20px]">
-                    Be Visible Where Your Customers Are Searching
-                    <br />
-                    We help your business dominate search results
-                    <br />
-                    with strategies that drive organic traffic, quality
-                    <br />
-                    leads, and long-term growth. Rank Us Higher
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="mt-8 w-full max-w-[360px] rounded-lg border-2 border-black bg-[#F4C20D] px-6 py-3 text-sm font-bold uppercase text-black shadow-[3px_3px_0px_black]"
-                  >
-                    Build My Profile
-                  </motion.button>
-                </div>
-              </div>
-
-              {/* RIGHT CARD */}
-              <div className="relative flex justify-center lg:justify-end">
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  className="relative mt-4 w-full max-w-[560px]"
-                >
-                  {/* Gray card */}
-                  <div className="relative h-[240px] overflow-hidden rounded-[20px] bg-[#e9e9e9] lg:h-[300px] lg:w-[600px] ">
-                    <div className="absolute inset-0 z-10 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.08)_0%,rgba(21,21,21,0)_100%)]"></div>
-                  </div>
-
-                  {/* Person image */}
-                  <motion.img
-                    src={servicePerson1}
-                    alt="person"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="absolute bottom-0 left-[38%] z-20 h-[290px] -translate-x-1/2 object-contain lg:left-[25%] lg:h-[360px]"
-                  />
-                </motion.div>
+                  </span>
+                </p>
               </div>
             </div>
-          </div>
-        </motion.section>
 
+            {/* RIGHT IMAGE + CARD */}
+            <div className="w-full  relative mt-16 lg:mt-0 flex justify-end">
+              {/* GRAY CARD */}
+              <div className="relative w-full lg:w-[50%] h-[260px] lg:h-[360px]  rounded-[30px]  z-20">
+                <div className="absolute inset-0 rounded-[30px] bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+                <motion.img
+                  src={servicePerson1}
+                  alt="person"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute bottom-0 left-[30%] transform -translate-x-1/2 object-contain h-[320px] lg:h-[440px] z-30"
+                />
+              </div>
+
+              {/* IMAGE (OVERLAPPING INTO TEXT) */}
+            </div>
+          </div>
+          <div className="flex justify-start pb-10 items-end">
+            <div className="max-w-[605px] pr-[141px]">
+              <div className="font-body text-[24px] z-20 text-justify">
+                Be Visible Where Your Customers Are SearchingWe help your
+                business dominate search results with strategies that drive
+                organic traffic, quality leads, and long-term growth. Rank Us
+                Higher
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full mt-4 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"
+              >
+                Build My PROFILE
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
         <div className="px-20 pb-10">
           <div className="text-[32px] font-body text-[#39AEB9]">
             Why SEO Matters?
@@ -153,9 +132,10 @@ const ServiceDetailFour = () => {
         </div>
 
         <div className="text-center pt-4  text-[24px] leading-[1] max-w-[936px] mx-auto font-body">
-          We don’t believe in shortcuts, we build SEO strategies that put your
-          business on top and keep it there. From visibility to credibility,
-          here’s how we make
+          We don’t believe in shortcuts, we build SEO{" "}
+          <span className="text-[64px] font-semibold">strategies</span> that put
+          your business on top and keep it there. From visibility to
+          credibility, here’s how we make
           <span className="font-semibold text-[48px] text-[#FEC107]">
             Google work
           </span>{" "}

@@ -7,7 +7,7 @@ import servicedetailrow3 from "../assets/service-detail3-row3.png";
 import servicedetailrow4 from "../assets/service-detail3-row4.png";
 import servicedetailrow5 from "../assets/service-detail3-row5.png";
 import servicedetailrow6 from "../assets/service-detail3-row6.png";
-import servicerDetailPerson1 from "../assets/service-detail-person-1.png";
+import servicerDetailPerson1 from "../assets/service-detail-person-3.png";
 import Banner from "../components/Banner";
 
 const fadeUp = {
@@ -30,41 +30,17 @@ const ServiceDetailThree = () => {
           viewport={{ once: true }}
           className="w-full pt-16 pb-10 px-6 lg:px-20 relative"
         >
-          <div className="max-w-7xl mx-auto relative isolate">
-            {/* LEFT CARD */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="relative w-full lg:w-[65%]"
-            >
-              {/* Gray Background */}
-              <div className="relative rounded-[30px] h-[260px] lg:h-[360px] bg-[#e9e9e9] overflow-hidden z-20">
-                <div className="absolute inset-0 z-30 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
-              </div>
-
-              {/* IMAGE (NOW ABOVE CARD ✅) */}
-              <motion.img
-                src={akshay}
-                alt="person"
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className="absolute bottom-0 left-10 lg:left-20 h-[320px] lg:h-[440px] z-30"
-              />
-            </motion.div>
-
-            {/* TEXT (TOP MOST) */}
-            <div className="absolute z-40 top-[10px] right-[-80px] w-full lg:w-[60%]">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center relative">
+            {/* LEFT TEXT */}
+            <div className="w-full lg:w-1/2 relative z-40">
               <h1 className="text-[40px] lg:text-[72px] font-heading leading-[1]">
                 WEBSITE
                 <span className="block text-[#FEC107]">DEVELOPMENT</span>
               </h1>
-            </div>
 
-            {/* SUBTEXT */}
-            <div className="absolute bottom-0 right-0 z-40">
-              <div className="max-w-sm text-right">
+              <div className="mt-6 max-w-md">
                 <p className="text-lg text-gray-600">
-                  <span className="text-black  block">
+                  <span className="text-black block">
                     Your Website is Your Digital Shopfront –
                   </span>
                   <span className="text-[#2FA4A9] font-semibold">
@@ -74,23 +50,27 @@ const ServiceDetailThree = () => {
               </div>
             </div>
 
-            {/* LEFT BLUE CIRCLE */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ repeat: Infinity, duration: 5 }}
-              className="absolute lg:bottom-[-100px] left-[-100px] z-0 w-48 h-48 rounded-full bg-[#39AEB9]"
-            />
+            {/* RIGHT IMAGE + CARD */}
+            <div className="w-full  relative mt-16 lg:mt-0 flex justify-center">
+              {/* CARD */}
+              <div className="relative w-[100%] h-[260px] lg:h-[360px] bg-[#e9e9e9] rounded-[30px] overflow-hidden z-20">
+                <div className="absolute inset-0 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
+              </div>
 
-            {/* RIGHT ORANGE CIRCLE (BEHIND TEXT) */}
-            <motion.div
-              animate={{ y: [0, 20, 0] }}
-              transition={{ repeat: Infinity, duration: 6 }}
-              className="absolute bottom-[-170px] lg:right-[-20px] right-[-50px] z-0 w-48 h-48 bg-gradient-to-l from-[#FEC107] to-[#FE6A07] rounded-full"
-            />
+              {/* IMAGE (OVERLAPPING LEFT INTO TEXT) */}
+              <motion.img
+                src={akshay}
+                alt="person"
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute bottom-[-50px] left-[-60px] lg:left-[0px] h-[320px] lg:h-[440px] z-30"
+              />
+            </div>
           </div>
         </motion.div>
 
-        <div className="flex justify-end pb-10 items-end">
+        <div className="flex justify-start px-20 pb-[81px] items-end">
           <div className="max-w-[605px] pr-[141px]">
             <div className="font-body text-[24px] z-20">
               Your Website is Your Digital Shopfront Let’s Build One That Sells.
@@ -117,9 +97,13 @@ const ServiceDetailThree = () => {
             first interaction customers have with your brand. Research shows
             that visitors form an opinion in just 3 seconds. If your website
             looks outdated, loads slowly, or feels confusing, you’re not just
-            losing attention, you’re losing potential sales. Over 75% of users
-            judge a company’s credibility based on its website design. A
-            professionally built, modern, and user-friendly website instantly
+            losing attention, you’re losing potential sales. Over
+            <span className="text-black font-mono font-semibold text-[24px]">
+              {" "}
+              75% of users judge a company’s credibility based on its website
+              design.
+            </span>{" "}
+            A professionally built, modern, and user-friendly website instantly
             builds trust, captures leads, and fuels business growth.
           </div>
         </div>
@@ -143,7 +127,7 @@ const ServiceDetailThree = () => {
             <img
               src={servicerDetailPerson1}
               alt="Service Detail Person"
-              className="h-[512px] w-[275px]"
+              className="h-[512px] w-[275px] object-contain"
             />
           </div>
         </div>
@@ -153,9 +137,9 @@ const ServiceDetailThree = () => {
         </div>
 
         <div className="text-center pt-4  text-[24px] leading-[1] max-w-[936px] mx-auto font-body">
-          We believe a website{" "}
-          <span className="text-[64px] font-semibold"></span> should do more
-          than just look good — it should build trust, engage visitors, and
+          We believe a
+          <span className="text-[64px] font-semibold">website </span> should do
+          more than just look good — it should build trust, engage visitors, and
           drive sales. That’s why our approach to web development combines
           creativity, technology, and strategy to deliver
           <span className="font-semibold text-[48px] text-[#FEC107]">
