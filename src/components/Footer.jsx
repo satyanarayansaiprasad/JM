@@ -2,6 +2,7 @@ import React from "react";
 import footerPerson from "../assets/footer-person.png";
 import footerLogo from "../assets/footer-logo.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,15 +20,32 @@ const Footer = () => {
               </button>
 
               <div className="flex gap-3">
-                <div className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center">
+                <a
+                  href="https://www.instagram.com/jugadu_marketers?igsh=Z2Z3NWcybHo4anR3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaInstagram size={14} />
-                </div>
-                <div className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/18cRTbmRnX/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaFacebookF size={14} />
-                </div>
-                <div className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/company/jugadu-marketers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaLinkedinIn size={14} />
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -35,12 +53,30 @@ const Footer = () => {
           {/* LINKS */}
           <div className="grid grid-cols-2 gap-10 text-sm text-gray-300 mt-10">
             <div className="flex flex-col gap-2">
-              <span>Our Team</span>
-              <span>Our Work</span>
-              <span>Case Studies</span>
-              <span>Our Services</span>
-              <span>Careers</span>
-              <span>Contact Us</span>
+              <Link
+                to="/our-team"
+                className="hover:text-yellow-400 cursor-pointer"
+              >
+                Our Team
+              </Link>
+              <Link
+                to="/works"
+                className="hover:text-yellow-400 cursor-pointer"
+              >
+                Our Work
+              </Link>
+              {/* <Link to="/case-studies" className="hover:text-yellow-400">
+                Case Studies
+              </Link> */}
+              <Link to="/services" className="hover:text-yellow-400">
+                Our Services
+              </Link>
+              <span className="hover:text-yellow-400 cursor-pointer">
+                Careers
+              </span>
+              <Link to="/contact-us" className="hover:text-yellow-400">
+                Contact Us
+              </Link>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -67,38 +103,61 @@ const Footer = () => {
             <div className="flex flex-col gap-6">
               {/* SOCIAL */}
               <div className="flex gap-4">
-                <div className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center">
+                <a
+                  href="https://www.instagram.com/jugadu_marketers?igsh=Z2Z3NWcybHo4anR3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaInstagram />
-                </div>
-                <div className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/18cRTbmRnX/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaFacebookF />
-                </div>
-                <div className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center">
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/company/jugadu-marketers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 cursor-pointer hover:bg-yellow-500 bg-gray-800 rounded-full flex items-center justify-center"
+                >
                   <FaLinkedinIn />
-                </div>
+                </a>
               </div>
 
               {/* LINKS */}
               <div className="grid grid-cols-2 gap-10 text-sm text-gray-300">
                 <div className="flex flex-col gap-2">
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  <Link
+                    to="/our-team"
+                    className="hover:text-yellow-400 cursor-pointer"
+                  >
                     Our Team
-                  </span>
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  </Link>
+                  <Link
+                    to="/works"
+                    className="hover:text-yellow-400 cursor-pointer"
+                  >
                     Our Work
-                  </span>
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  </Link>
+                  {/* <Link to="/case-studies" className="hover:text-yellow-400">
                     Case Studies
-                  </span>
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  </Link> */}
+                  <Link to="/services" className="hover:text-yellow-400">
                     Our Services
-                  </span>
+                  </Link>
                   <span className="hover:text-yellow-400 cursor-pointer">
                     Careers
                   </span>
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  <Link to="/contact-us" className="hover:text-yellow-400">
                     Contact Us
-                  </span>
+                  </Link>
                 </div>
 
                 <div className="flex flex-col gap-2">
