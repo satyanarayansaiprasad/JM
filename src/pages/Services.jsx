@@ -257,6 +257,7 @@ const Services = () => {
           {/* CARD 1 */}
           <div>
             <motion.div
+              onClick={() => navigation("/services-details")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -303,6 +304,7 @@ const Services = () => {
           </div>
           <div>
             <motion.div
+              onClick={() => navigation("/services-detail-2")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -351,6 +353,7 @@ const Services = () => {
           </div>
           <div>
             <motion.div
+              onClick={() => navigation("/services-detail-3")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -399,6 +402,7 @@ const Services = () => {
           </div>
           <div className="pt-10">
             <motion.div
+              onClick={() => navigation("/services-detail-4")}
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
