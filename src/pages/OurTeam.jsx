@@ -11,6 +11,7 @@ import person5 from "../assets/team-person5.png";
 import pupun from "../assets/pupun.png";
 import pratyush from "../assets/pratyush.png";
 import teamGroup from "../assets/team-group.png";
+import team2bg from "../assets/team-card-2-bg.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -55,7 +56,7 @@ const OurTeam = () => {
           animate="show"
         /> */}
         <img
-          className="lg:w-[810px] h-[200px] z-40 lg:h-[607px] bottom-0 left-1/2 transform -translate-x-1/2 object-contain absolute"
+          className="lg:w-[810px] h-[200px] z-50 lg:h-[607px] bottom-0 left-1/2 transform -translate-x-1/2 object-contain absolute"
           src={group}
           alt="Team"
         />
@@ -133,85 +134,207 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
       <div className="lg:p-20">
         <div className="lg:flex justify-between items-start">
           <div>
-            <div className="lg:flex items-center">
+            <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
               {/* CARD */}
-              <motion.div
-                className="relative lg:w-[320px]   h-[320px] flex items-end justify-center"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-                <img
-                  src={person1}
-                  className="absolute bottom-[0px] z-20 h-[380px] object-contain"
-                  alt="logo"
-                />
-                <h2 className="absolute font-heading bottom-[-20px] text-[48px] font-bold text-[#F6CB12] z-30">
-                  AMIT
-                </h2>
-              </motion.div>
+              <div className="relative group lg:w-[320px] h-[320px]">
+                {/* SMALL CARD */}
+                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
-              <motion.div
-                className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-                <img
-                  src={person2}
-                  className="absolute bottom-[0px] z-20 h-[390px] object-contain"
-                  alt="logo"
-                />
-                <h2 className="absolute font-heading bottom-[-20px] text-[48px] font-bold text-[#F6CB12] z-30">
-                  ALOK
-                </h2>
-              </motion.div>
+                  <img
+                    src={person1}
+                    className="absolute bottom-0 z-20 h-[380px]"
+                    alt=""
+                  />
+
+                  <h2 className="absolute bottom-[-20px] text-[48px] font-heading text-[#F6CB12] z-30">
+                    AMIT
+                  </h2>
+                </div>
+                {/* 🔥 BIG EXPANDED CARD */}
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                  {/* LEFT TEXT */}
+                  <div className="w-1/2 p-6 flex flex-col  text-justify">
+                    <p className="text-[14px] text-black/70 leading-relaxed">
+                      When ideas start flying in every direction and campaigns
+                      get a little chaotic, Amit quietly becomes the compass.
+                      <br />
+                      <br />
+                      He’s the one asking the bigger questions — Where should
+                      this brand go next? Are we thinking big enough?
+                      <br />
+                      <br />
+                      At Jugadu Marketers, he isn’t just leading the team. He’s
+                      making sure everyone is moving toward the right horizon.
+                    </p>
+
+                    <p className="mt-4 font-bold text-[12px]">FOUNDER</p>
+                  </div>
+
+                  {/* RIGHT IMAGE AREA */}
+                  <div className="w-1/2 relative flex items-center justify-center bg-[linear-gradient(180deg,#39AEB9_0%,#1A4E53_100%)]">
+                    {/* Circle */}
+                    <div className="absolute top-[10px] right-0 z-40  w-[100px] h-[100px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                    {/* Image */}
+                    <img
+                      src={person1}
+                      className="h-[380px] object-contain z-10"
+                      alt=""
+                    />
+                    {/* Background text */}
+                    <div className="bg-white absolute h-[200px] w-[300px]"></div>
+                    <div className="absolute text-[180px] font-bold text-[#35AA3A]">
+                      NS
+                    </div>
+                  </div>
+                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+                    The Nort<span className="text-white">h Star</span>
+                  </div>
+                </div>
+              </div>
+              {/* card-2 */}
+              <div className="relative group lg:w-[320px] h-[320px]">
+                {/* SMALL CARD */}
+                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
+
+                  <img
+                    src={person2}
+                    className="absolute bottom-0 z-20 h-[390px] object-contain"
+                    alt=""
+                  />
+
+                  {/* FONT SAME */}
+                  <h2 className="absolute bottom-[-20px] text-[48px] font-heading text-[#F6CB12] z-30">
+                    ALOK
+                  </h2>
+                </div>
+
+                {/* 🔥 BIG EXPANDED CARD */}
+                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                  {/* LEFT CONTENT */}
+                  <div className="w-1/2 p-6 flex flex-col ">
+                    <p className="text-[14px] text-black/70 leading-relaxed">
+                      Momentum is his default setting.
+                      <br />
+                      <br />
+                      Campaigns go live, numbers get tracked, and optimisations
+                      keep happening — that’s Alok’s zone. From campaign
+                      management to performance marketing, he keeps the Jugadu
+                      machine running smoothly and moving forward.
+                    </p>
+
+                    <p className="mt-4 font-bold text-[12px]">CREATIVE HEAD</p>
+                  </div>
+
+                  {/* RIGHT SIDE */}
+                  <div className="w-1/2 relative flex items-center justify-center ">
+                    {/* Circle */}
+                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
+
+                    {/* Image */}
+                    <img
+                      src={person2}
+                      className="h-full  object-contain z-10"
+                      style={{ transform: "scaleX(-1)" }}
+                      alt=""
+                    />
+                    <img
+                      src={team2bg}
+                      className="h-[600px] absolute right-[-80px] object-contain z-0"
+                      alt=""
+                    />
+
+                    {/* Background Text */}
+                    {/* <div className="absolute text-[120px] font-bold text-white/20">
+                      NS
+                    </div> */}
+                  </div>
+                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+                    The Engine
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="lg:flex items-center">
-              <motion.div
-                className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-                <img
-                  src={person3}
-                  className="absolute bottom-[0px] z-20 h-[390px] object-contain"
-                  alt="logo"
-                />
-                <h2 className="absolute font-heading bottom-[-15px] text-[35px] font-bold text-[#F6CB12] z-30">
-                  SAMAYA
-                </h2>
-              </motion.div>
+            <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
+              {/* card3 */}
+              <div className="relative group lg:w-[320px] h-[320px]">
+                {/* SMALL CARD */}
+                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
-              <motion.div
-                className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-                <img
-                  src={person4}
-                  className="absolute bottom-[0px] left-[20px] lg:left-0 z-20 h-[490px] object-contain"
-                  alt="logo"
-                />
-                <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
-                  ARYAN
-                </h2>
-              </motion.div>
+                  <img
+                    src={person3}
+                    className="absolute bottom-0 z-20 h-[390px] object-contain"
+                    alt=""
+                  />
+
+                  {/* FONT SAME */}
+                  <h2 className="absolute bottom-[-15px] text-[35px] font-heading text-[#F6CB12] z-30">
+                    SAMAYA
+                  </h2>
+                </div>
+
+                {/* 🔥 BIG EXPANDED CARD */}
+                <div className="absolute top-0 left-0 w-[700px] h-[380px] bg-[#e6e6e6] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                  {/* LEFT TEXT */}
+                  <div className="w-1/2 p-6 flex flex-col ">
+                    <p className="text-[14px] text-black/70 leading-relaxed">
+                      Samaya blends creativity with strategy to deliver
+                      impactful campaigns.
+                      <br />
+                      <br />
+                      She ensures every idea is executed with precision and
+                      purpose, driving meaningful results.
+                    </p>
+
+                    <p className="mt-4 font-bold text-[12px]">STRATEGIST</p>
+                  </div>
+
+                  {/* RIGHT SIDE */}
+                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b from-[#39AEB9] to-[#1A4E53]">
+                    {/* Circle */}
+                    <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+
+                    {/* Image */}
+                    <img
+                      src={person3}
+                      className="h-[300px] object-contain z-10 scale-x-[-1]"
+                      alt=""
+                    />
+
+                    {/* Background Text */}
+                    <div className="absolute text-[120px] font-bold text-white/20">
+                      NS
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* card 4 */}
+              <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
+                <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
+                  <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+
+                  <img
+                    src={person4}
+                    className="absolute bottom-0 left-[20px] lg:left-0 z-20 h-[490px] object-contain"
+                    alt="logo"
+                  />
+
+                  <h2 className="absolute bottom-[-12px] text-[33px] font-heading text-[#F6CB12] z-30">
+                    ARYAN
+                  </h2>
+                </div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
+                  <p className="text-center">
+                    Aryan focuses on execution and innovation, helping deliver
+                    consistent high-quality output.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="lg:block hidden">
@@ -250,63 +373,78 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
         </div>
 
         {/* LAST ROW */}
-        <div className=" lg:flex">
-          <motion.div
-            className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-            <img
-              src={pratyush}
-              className="absolute bottom-[0px] z-20 h-[300px]"
-              alt="logo"
-            />
-            <h2 className="absolute font-heading bottom-[-12px] text-[28px] font-bold text-[#F6CB12] z-30">
-              PRATYUSH
-            </h2>
-          </motion.div>
+        <div className=" lg:flex gap-20">
+          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
+            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
 
-          <motion.div
-            className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-            <img
-              src={pupun}
-              className="absolute bottom-[0px] z-20 h-[290px]"
-              alt="logo"
-            />
-            <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
-              PAPUNU
-            </h2>
-          </motion.div>
+              <img
+                src={pratyush}
+                className="absolute bottom-0 z-20 h-[300px]"
+                alt="logo"
+              />
 
-          <motion.div
-            className="relative lg:w-[320px] h-[320px] flex items-end justify-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
-            <img
-              src={person5}
-              className="absolute bottom-[0px] left-[32px] lg:left-0 z-20 h-[350px]"
-              alt="logo"
-            />
-            <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
-              DEBASIS
-            </h2>
-          </motion.div>
+              {/* FONT UNCHANGED */}
+              <h2 className="absolute font-heading bottom-[-12px] text-[28px] font-bold text-[#F6CB12] z-30">
+                PRATYUSH
+              </h2>
+            </div>
+
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
+              <p className="text-center">
+                Pratyush contributes with dedication and execution to deliver
+                quality work.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
+            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+
+              <img
+                src={pupun}
+                className="absolute bottom-0 z-20 h-[290px]"
+                alt="logo"
+              />
+
+              {/* FONT UNCHANGED */}
+              <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
+                PAPUNU
+              </h2>
+            </div>
+
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
+              <p className="text-center">
+                Papunu focuses on execution and supports team operations
+                effectively.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative group lg:w-[320px] h-[320px] flex items-end justify-center">
+            <div className="relative w-full h-full flex items-end justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md z-10"></div>
+
+              <img
+                src={person5}
+                className="absolute bottom-0 left-[32px] lg:left-0 z-20 h-[350px]"
+                alt="logo"
+              />
+
+              {/* FONT UNCHANGED */}
+              <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
+                DEBASIS
+              </h2>
+            </div>
+
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white p-4 z-40">
+              <p className="text-center">
+                Debasis brings consistency and ensures smooth workflow across
+                projects.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="lg:pt-32 pt-20">
