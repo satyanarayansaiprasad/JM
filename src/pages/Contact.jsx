@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Banner from "../components/Banner";
-import {
-  FaTwitter,
-  FaInstagram,
-  FaDiscord,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const subjects = [
+  "Social Media Marketing",
+  "Performance Marketing",
+  "Website Development",
+  "Search Engine Optimization",
+];
+
+const socialLinks = [
+  {
+    icon: FaInstagram,
+    url: "https://www.instagram.com/jugadu_marketers?igsh=Z2Z3NWcybHo4anR3/",
+  },
+  { icon: FaFacebookF, url: "https://www.facebook.com/share/18cRTbmRnX/" },
+  {
+    icon: FaLinkedinIn,
+    url: "https://www.linkedin.com/company/jugadu-marketers/",
+  },
+];
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
   // 🔥 Animation variants
   const container = {
     hidden: {},
@@ -24,6 +45,30 @@ const Contact = () => {
   const item = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSendMessage = () => {
+    const { firstName, lastName, email, phone, subject, message } = formData;
+
+    const mailSubject = subject || "Contact Form Submission";
+    const mailBody = `First Name: ${firstName}
+    Last Name: ${lastName}
+    Email: ${email}
+    Phone Number: ${phone}
+    Subject: ${subject}
+    Message:${message}`;
+
+    window.location.href = `mailto:jugadumarketers@gmail.com?subject=${encodeURIComponent(
+      mailSubject,
+    )}&body=${encodeURIComponent(mailBody)}`;
   };
 
   return (
@@ -92,7 +137,7 @@ const Contact = () => {
               </p>
 
               <div className="space-y-8 text-sm">
-                {[FaPhoneAlt, FaEnvelope, FaMapMarkerAlt].map((Icon, i) => (
+                {[FaInstagram, FaFacebookF, FaLinkedinIn].map((Icon, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -30 }}
@@ -115,14 +160,17 @@ const Contact = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4 mt-10">
-              {[FaTwitter, FaInstagram, FaDiscord].map((Icon, i) => (
-                <motion.div
+              {socialLinks.map(({ icon: Icon, url }, i) => (
+                <motion.a
                   key={i}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   className="w-9 h-9 bg-[#1f1f1f] rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-600 transition"
                 >
                   <Icon size={14} />
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
@@ -143,7 +191,28 @@ const Contact = () => {
                 (label, i) => (
                   <motion.div key={i} variants={item}>
                     <label className="text-xs text-gray-500">{label}</label>
-                    <input className="w-full border-b border-gray-300 focus:border-black outline-none py-2" />
+                    <input
+                      name={
+                        label === "First Name"
+                          ? "firstName"
+                          : label === "Last Name"
+                            ? "lastName"
+                            : label === "Email"
+                              ? "email"
+                              : "phone"
+                      }
+                      value={
+                        label === "First Name"
+                          ? formData.firstName
+                          : label === "Last Name"
+                            ? formData.lastName
+                            : label === "Email"
+                              ? formData.email
+                              : formData.phone
+                      }
+                      onChange={handleChange}
+                      className="w-full border-b border-gray-300 focus:border-black outline-none py-2"
+                    />
                   </motion.div>
                 ),
               )}
@@ -154,13 +223,20 @@ const Contact = () => {
               <p className="text-sm mb-4 font-medium">Select Subject?</p>
 
               <div className="lg:flex gap-1 lg:gap-6 text-sm items-center lg:space-y-0 space-y-4">
-                {[1, 2, 3, 4].map((_, i) => (
+                {subjects.map((subject, i) => (
                   <label
                     key={i}
                     className="flex items-center gap-2 cursor-pointer"
                   >
-                    <input type="radio" name="s" className="accent-black" />
-                    General Inquiry
+                    <input
+                      type="radio"
+                      name="subject"
+                      value={subject}
+                      checked={formData.subject === subject}
+                      onChange={handleChange}
+                      className="accent-black"
+                    />
+                    {subject}
                   </label>
                 ))}
               </div>
@@ -170,6 +246,9 @@ const Contact = () => {
             <motion.div variants={item} className="mt-10">
               <label className="text-xs text-gray-500">Message</label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Write your message.."
                 className="w-full border-b border-gray-300 focus:border-black outline-none py-2 resize-none"
                 rows={2}
@@ -179,6 +258,7 @@ const Contact = () => {
             {/* Button */}
             <motion.div variants={item} className="flex justify-end mt-10">
               <motion.button
+                onClick={handleSendMessage}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-black text-white px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition"

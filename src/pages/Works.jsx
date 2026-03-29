@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaBehance,
-  FaDribbble,
-  FaDiscord,
-} from "react-icons/fa";
+import React, { useState } from "react";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 import Card2 from "../assets/card2.png";
@@ -19,7 +13,49 @@ import Card1logo from "../assets/card1logo.png";
 import Card1bg from "../assets/card1bg.png";
 import { useNavigate } from "react-router-dom";
 
+const socialLinks = [
+  {
+    icon: FaInstagram,
+    url: "https://www.instagram.com/jugadu_marketers?igsh=Z2Z3NWcybHo4anR3/",
+  },
+  {
+    icon: FaFacebookF,
+    url: "https://www.facebook.com/share/18cRTbmRnX/",
+  },
+  {
+    icon: FaLinkedinIn,
+    url: "https://www.linkedin.com/company/jugadu-marketers/",
+  },
+];
+
 const Works = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    const { placeholder, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [placeholder.toLowerCase()]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    const { name, email } = formData;
+
+    const body = `Name: ${name}
+Email: ${email}`;
+
+    window.location.href = `mailto:jugadumarketers@gmail.com?subject=${encodeURIComponent(
+      "Work Inquiry",
+    )}&body=${encodeURIComponent(body)}`;
+  };
+
   // 🔥 animation configs
   const container = {
     hidden: {},
@@ -39,7 +75,6 @@ const Works = () => {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
-  const navigate = useNavigate();
 
   return (
     <div className="h-full">
@@ -47,7 +82,7 @@ const Works = () => {
       <div className="relative w-full lg:h-[600px] h-[250px] overflow-hidden flex items-center justify-center ">
         <div className="absolute lg:left-[-200px] lg:bottom-[-70px] left-[-30px] bottom-[-40px] w-[100px] h-[100px] lg:w-[300px] lg:h-[300px] bg-[#39AEB9] rounded-full"></div>
 
-        <div className="absolute lg:right-[-50px] top-10 right-[-50px] lg:top-10 lg:w-[300px] lg:h-[300px] w-[100px] h-[100px]  bg-[#39AEB9] rounded-full"></div>
+        <div className="absolute lg:right-[-50px] top-10 right-[-50px] lg:top-10 lg:w-[300px] lg:h-[300px] w-[100px] h-[100px] bg-[#39AEB9] rounded-full"></div>
 
         <motion.div
           initial={{ opacity: 0, y: 80 }}
@@ -123,7 +158,6 @@ const Works = () => {
             whileHover={{ y: -10, scale: 1.02 }}
             className="relative w-full max-w-[488px] mx-auto"
           >
-            {/* GRAY CARD */}
             <div className="h-[300px] lg:h-[412px] w-full bg-[#EBEBEB] rounded-3xl flex flex-col items-center pt-6 relative z-10">
               <img
                 src={Crad2Logo}
@@ -132,14 +166,12 @@ const Works = () => {
               />
             </div>
 
-            {/* 🌿 FLOWER (MOVE OUTSIDE + HIGHEST Z) */}
             <img
               src={Card2top}
               alt="flower"
               className="absolute left-0 w-full bottom-[150px] lg:bottom-[260px] z-30 object-contain pointer-events-none"
             />
 
-            {/* 🟤 BROWN CIRCLE */}
             <div className="w-[280px] h-[280px] lg:w-[470px] lg:h-[470px] bg-[#472E00] rounded-full mx-auto -mt-[80px] lg:-mt-[110px] relative z-20 flex items-end justify-center">
               <img
                 src={Card2}
@@ -240,11 +272,17 @@ const Works = () => {
             </p>
 
             <div className="flex gap-6 text-xl">
-              <FaDiscord />
-              <FaFacebookF />
-              <FaDribbble />
-              <FaInstagram />
-              <FaBehance />
+              {socialLinks.map(({ icon: Icon, url }, i) => (
+                <a
+                  key={i}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition"
+                >
+                  <Icon />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -252,13 +290,20 @@ const Works = () => {
             <input
               className="w-full bg-[#dcdcdc] p-4 mb-4"
               placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
             />
             <input
               className="w-full bg-[#dcdcdc] p-4 mb-6"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
             />
 
-            <button className="bg-[#2f2f2f] text-white px-10 py-4 hover:bg-black">
+            <button
+              onClick={handleSubmit}
+              className="bg-[#2f2f2f] text-white px-10 py-4 hover:bg-black"
+            >
               Submit
             </button>
           </div>
