@@ -278,7 +278,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
                   {/* FONT SAME */}
                   <h2 className="absolute bottom-[-15px] text-[35px] font-heading text-[#F6CB12] z-30">
-                    SAMAYA
+                    SAMAY
                   </h2>
                 </div>
 
@@ -463,7 +463,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
               {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[28px] font-bold text-[#F6CB12] z-30">
-                PRATYUSH
+                PRATYOSH
               </h2>
             </div>
 
