@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full py-4 flex justify-center sticky top-0 z-[1000]">
-      <div className="bg-black w-[98%] md:w-auto gap-10 lg:rounded-full px-6 md:px-10 py-3 md:py-2 flex items-center justify-between text-white relative">
+      <div className="bg-black w-[98%] md:w-auto gap-10 rounded-full px-6 md:px-10 py-3 md:py-2 flex items-center justify-between text-white relative">
         {/* MOBILE MENU BUTTON */}
         <div className="md:hidden flex items-center justify-end w-full">
           <button onClick={() => setOpen(true)}>
