@@ -78,7 +78,7 @@ const ServiceDetailFour = () => {
             {/* RIGHT IMAGE + CARD */}
             <div className="w-full  relative lg:mt-16 mt-0 flex justify-end">
               {/* GRAY CARD */}
-              <div className="relative w-full lg:w-[50%] h-[260px] lg:h-[360px]  rounded-[30px]  z-20">
+              <div className="relative w-full lg:w-[50%] h-[200px] lg:h-[360px]  rounded-[30px]  z-20">
                 <div className="absolute inset-0 rounded-[30px] bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
                 <motion.img
                   src={servicePerson1}
@@ -86,7 +86,7 @@ const ServiceDetailFour = () => {
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.8 }}
-                  className="absolute bottom-0 left-0  transform -translate-x-1/2 object-contain h-[320px] w-full lg:h-[440px] z-30"
+                  className="absolute bottom-0 left-0  transform -translate-x-1/2 object-contain h-[250px] w-full lg:h-[440px] z-30"
                 />
               </div>
 
@@ -178,12 +178,12 @@ const ServiceDetailFour = () => {
 
         <div className="text-center pt-4 lg:px-0 px-6  lg:text-[24px] leading-[1] max-w-[936px] mx-auto font-body">
           We don’t believe in shortcuts, we build SEO{" "}
-          <span className="lg:text-[64px] text-[30px] font-semibold">
+          <span className="lg:text-[64px] text-[30px] font-bodyItalic">
             strategies
           </span>{" "}
           that put your business on top and keep it there. From visibility to
           credibility, here’s how we make
-          <span className="font-semibold lg:text-[48px] text-[30px] text-[#FEC107]">
+          <span className="font-semibold lg:text-[48px] font-bodyItalic text-[30px] text-[#FEC107]">
             Google work
           </span>{" "}
           for you:
@@ -198,7 +198,7 @@ const ServiceDetailFour = () => {
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3 lg:max-w-[180px]">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3 lg:max-w-[180px]">
                 Optimized structure, speed, and content that search engines love
               </div>
             </div>
@@ -210,7 +210,7 @@ const ServiceDetailFour = () => {
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3 lg:max-w-[180px]">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3 lg:max-w-[180px]">
                 Authority-building backlinks and brand mentions.
               </div>
             </div>
@@ -222,7 +222,7 @@ const ServiceDetailFour = () => {
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3 lg:max-w-[180px]">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3 lg:max-w-[180px]">
                 Get found in “near me” searches and maps.
               </div>
             </div>
@@ -234,7 +234,7 @@ const ServiceDetailFour = () => {
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3 lg:max-w-[180px]">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3 lg:max-w-[180px]">
                 Higher product rankings that boost sales.
               </div>
             </div>

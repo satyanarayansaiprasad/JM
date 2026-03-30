@@ -89,7 +89,7 @@ const ServiceDetailThree = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="absolute bottom-[-20px] left-0 lg:left-[0px] h-[300px] lg:h-[440px] z-30"
+                className="absolute lg:bottom-[-20px] bottom-[-50px] left-0 lg:left-[0px] h-[300px] lg:h-[440px] z-30 object-contain"
               />
             </div>
           </div>
@@ -181,13 +181,13 @@ const ServiceDetailThree = () => {
 
         <div className="text-center pt-4  lg:text-[24px] lg:px-0 px-6 leading-[1] max-w-[936px] mx-auto font-body">
           We believe a
-          <span className="lg:text-[64px] text-[30px] font-semibold">
+          <span className="lg:text-[64px] text-[30px] font-bodyItalic">
             website{" "}
           </span>{" "}
           should do more than just look good — it should build trust, engage
           visitors, and drive sales. That’s why our approach to web development
           combines creativity, technology, and strategy to deliver
-          <span className="font-semibold  text-[30px] lg:text-[48px] text-[#FEC107]">
+          <span className="font-semibold font-bodyItalic  text-[30px] lg:text-[48px] text-[#FEC107]">
             results
           </span>
         </div>
@@ -201,7 +201,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 No templates, only websites as unique as your brand.
               </div>
             </div>
@@ -213,7 +213,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Flawless on mobile, desktop & everywhere in between.
               </div>
             </div>
@@ -225,7 +225,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Smart online stores built to sell.
               </div>
             </div>
@@ -237,7 +237,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Campaign-ready pages that actually convert.
               </div>
             </div>
@@ -249,7 +249,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Smooth, simple, and customer-friendly.
               </div>
             </div>
@@ -261,7 +261,7 @@ const ServiceDetailThree = () => {
                 src={servicedetailrow6}
                 alt="Service Detail Row 6"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 We don’t vanish after launch, we stay.
               </div>
             </div>
