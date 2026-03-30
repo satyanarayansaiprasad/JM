@@ -9,6 +9,7 @@ import servicedetailrow5 from "../assets/service-detail3-row5.png";
 import servicedetailrow6 from "../assets/service-detail3-row6.png";
 import servicerDetailPerson1 from "../assets/service-detail-person-3.png";
 import Banner from "../components/Banner";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -20,6 +21,7 @@ const fadeUp = {
 };
 
 const ServiceDetailThree = () => {
+  const navigation = useNavigate();
   return (
     <div>
       <div className="lg:hidden block">
@@ -119,6 +121,7 @@ const ServiceDetailThree = () => {
               customers.
             </div>
             <motion.button
+              onClick={() => navigation("/contact-us")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full mt-4 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"

@@ -528,7 +528,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
               {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
-                PAPUNU
+                PAPUN
               </h2>
             </div>
 

@@ -8,6 +8,7 @@ import servicedetailrow4 from "../assets/service-detail-row4.png";
 import servicedetailrow5 from "../assets/service-detail-row5.png";
 import servicerDetailPerson1 from "../assets/service-detail-person-1.png";
 import Banner from "../components/Banner";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -19,6 +20,7 @@ const fadeUp = {
 };
 
 const ServiceDetails = () => {
+  const navigation = useNavigate();
   return (
     <div>
       <div className="lg:hidden block">
@@ -120,6 +122,7 @@ const ServiceDetails = () => {
               your audience but also convert them into loyal customers.
             </div>
             <motion.button
+              onClick={() => navigation("/contact-us")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full mt-4 bg-[#F4C20D] px-6 py-3 rounded-lg shadow-[3px_3px_0px_black]"

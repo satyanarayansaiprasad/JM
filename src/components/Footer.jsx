@@ -3,8 +3,11 @@ import footerPerson from "../assets/footer-person.png";
 import footerLogo from "../assets/footer-logo.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
+// import { i } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigation = useNavigate();
   return (
     <div className="w-full bg-[#0f0f0f] text-white relative overflow-hidden">
       <div className="mx-auto pt-10 lg:px-0 px-6">
@@ -178,7 +181,10 @@ const Footer = () => {
           {/* RIGHT */}
           <div className="flex flex-col items-end">
             <div className="pr-10">
-              <button className="bg-yellow-500 text-black px-6 py-2 rounded-full mb-6">
+              <button
+                onClick={() => navigation("/contact-us")}
+                className="bg-yellow-500 text-black px-6 py-2 rounded-full mb-6"
+              >
                 Make an appointment
               </button>
             </div>

@@ -14,7 +14,7 @@ const ClientsMarquee = () => {
       <div className="relative flex w-full overflow-hidden">
         {/* TRACK */}
         <div className="flex animate-marquee gap-16">
-          {[...logos, ...logos].map((logo, index) => (
+          {[...logos, ...logos, ...logos].map((logo, index) => (
             <img
               key={index}
               src={logo}
