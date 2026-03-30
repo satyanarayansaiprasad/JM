@@ -143,11 +143,11 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
             <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
               {/* CARD */}
 
-              <div className="relative group lg:w-[320px] h-[320px]">
+              <div className="relative group lg:w-[320px] h-[320px] lg:my-0 my-20">
                 {/* SMALL CARD */}
                 <div
                   onClick={() => setActiveCard("amit")}
-                  className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10 cursor-pointer"
+                  className="relative w-full h-full flex  items-end justify-center transition duration-300 group-hover:scale-105 z-10 cursor-pointer"
                 >
                   <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
@@ -228,7 +228,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
               </div>
               {/* card-2 */}
-              <div className="relative group w-full  lg:w-[320px] h-auto lg:h-[320px]">
+              <div className="relative group w-full   lg:w-[320px] h-auto lg:h-[320px] lg:my-0 my-20">
                 {/* SMALL CARD */}
                 <div
                   onClick={() => setActiveCard("alok")}
@@ -288,7 +288,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                     {/* MAIN IMAGE (fixed scaling) */}
                     <img
                       src={person2}
-                      className="max-h-[250px] lg:max-h-full object-contain z-10"
+                      className="max-h-[350px] absolute bottom-0 lg:max-h-full object-contain z-10"
                       style={{ transform: "scaleX(-1)" }}
                       alt=""
                     />
@@ -311,7 +311,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
             <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
               {/* card3 */}
-              <div className="relative group w-full mx-auto lg:w-[320px] h-auto lg:h-[320px]">
+              <div className="relative group w-full mx-auto lg:w-[320px] h-auto lg:h-[320px] lg:my-0 my-20 ">
                 {/* SMALL CARD */}
                 <div
                   onClick={() => setActiveCard("samay")}
@@ -399,7 +399,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 </div>
               </div>
               {/* card 4 */}
-              <div className="relative group lg:w-[320px] h-[320px]">
+              <div className="relative group lg:w-[320px] h-[320px] lg:my-0 my-20">
                 {/* SMALL CARD */}
                 <div
                   onClick={() => setActiveCard("aryan")}
@@ -472,7 +472,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
                     <img
                       src={card4bg2}
-                      className="h-[290px] w-full lg:h-auto bottom-0 right-[-30px] lg:right-[-90px] absolute object-contain z-0"
+                      className="h-[300px]  lg:h-auto bottom-0 right-[-30px] lg:right-[-90px] absolute object-contain z-0"
                       alt=""
                     />
                   </div>
@@ -522,7 +522,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
         {/* LAST ROW */}
         <div className=" lg:flex gap-20">
-          <div className="relative group lg:w-[320px] h-[320px]">
+          <div className="relative group lg:w-[320px] h-[320px] lg:my-0 my-20">
             {/* SMALL CARD */}
             <div
               onClick={() => setActiveCard("pratyosh")}
@@ -604,7 +604,7 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
             </div>
           </div>
 
-          <div className="relative group lg:w-[320px] h-[320px]">
+          <div className="relative group lg:w-[320px] h-[320px] lg:my-0 my-20">
             {/* SMALL CARD */}
             <div
               onClick={() => setActiveCard("papun")}

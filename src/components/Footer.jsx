@@ -18,7 +18,10 @@ const Footer = () => {
             <img src={footerLogo} className="w-24" alt="" />
 
             <div className="flex flex-col items-end gap-4">
-              <button className="bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium">
+              <button
+                onClick={() => navigation("/contact-us")}
+                className="bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium"
+              >
                 Make an appointment
               </button>
 
