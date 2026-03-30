@@ -31,7 +31,7 @@ const fadeUp = {
 const OurTeam = () => {
   const [text, setText] = useState("");
   const fullText = "The way we build";
-
+  const [activeCard, setActiveCard] = useState(null);
   useEffect(() => {
     let i = 0;
 
@@ -142,9 +142,13 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
           <div>
             <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
               {/* CARD */}
+
               <div className="relative group lg:w-[320px] h-[320px]">
                 {/* SMALL CARD */}
-                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                <div
+                  onClick={() => setActiveCard("amit")}
+                  className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10 cursor-pointer"
+                >
                   <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
                   <img
@@ -157,11 +161,30 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                     AMIT
                   </h2>
                 </div>
+
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div
+                  className={`
+      ${activeCard === "amit" ? "flex" : "hidden"} lg:flex
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl 
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+                >
+                  {/* ❌ CLOSE BUTTON (Mobile only) */}
+                  <button
+                    onClick={() => setActiveCard(null)}
+                    className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
+
                   {/* LEFT TEXT */}
-                  <div className="w-1/2 p-6 flex flex-col  text-justify">
-                    <p className="text-[14px] text-black/70 leading-relaxed">
+                  <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                    <p className="text-[14px] text-black/70 font-body leading-relaxed">
                       When ideas start flying in every direction and campaigns
                       get a little chaotic, Amit quietly becomes the compass.
                       <br />
@@ -177,50 +200,77 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                     <p className="mt-4 font-bold text-[12px]">FOUNDER</p>
                   </div>
 
-                  {/* RIGHT IMAGE AREA */}
-                  <div className="w-1/2 relative flex items-center justify-center bg-[linear-gradient(180deg,#39AEB9_0%,#1A4E53_100%)]">
+                  {/* RIGHT IMAGE AREA (FIXED ✅) */}
+                  <div className="w-full lg:w-1/2 relative flex items-end lg:items-center justify-center bg-[linear-gradient(180deg,#39AEB9_0%,#1A4E53_100%)] min-h-[260px] lg:min-h-full overflow-hidden px-4">
                     {/* Circle */}
-                    <div className="absolute top-[10px] right-0 z-40  w-[100px] h-[100px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                    <div className="absolute top-[10px] right-[15px] lg:right-0 z-40 w-[90px] h-[90px] lg:w-[100px] lg:h-[100px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+
+                    {/* Background box */}
+                    <div className="bg-white lg:relative absolute top-[20px] h-[160px] w-[186px] lg:h-[200px] lg:w-[300px]"></div>
+
                     {/* Image */}
                     <img
                       src={person1}
-                      className="h-[380px] object-contain z-10"
+                      className="h-[320px] absolute bottom-0  lg:h-[380px] object-contain z-10"
                       alt=""
                     />
+
                     {/* Background text */}
-                    <div className="bg-white absolute h-[200px] w-[300px]"></div>
-                    <div className="absolute text-[180px] font-bold text-[#35AA3A]">
+                    <div className="absolute text-[70px] sm:text-[90px] lg:text-[180px] font-bold text-[#35AA3A] ">
                       NS
                     </div>
                   </div>
-                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
-                    The Nort<span className="text-white">h Star</span>
+
+                  {/* BOTTOM TITLE */}
+                  <div className="absolute left-[0px] text-[#F6CB12] text-center lg:text-black  w-full bottom-0 font-heading text-[28px] lg:text-[50px] leading-none z-30">
+                    The Nort<span className="lg:text-white">h Star</span>
                   </div>
                 </div>
               </div>
               {/* card-2 */}
-              <div className="relative group lg:w-[320px] h-[320px]">
+              <div className="relative group w-full  lg:w-[320px] h-auto lg:h-[320px]">
                 {/* SMALL CARD */}
-                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                <div
+                  onClick={() => setActiveCard("alok")}
+                  className="relative w-full h-[320px] flex items-end justify-center transition duration-300 lg:group-hover:scale-105 z-10"
+                >
                   <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
                   <img
                     src={person2}
-                    className="absolute bottom-0 z-20 h-[390px] object-contain"
+                    className="absolute bottom-0 z-20 h-[320px] lg:h-[390px] object-contain"
                     alt=""
                   />
 
-                  {/* FONT SAME */}
-                  <h2 className="absolute bottom-[-20px] text-[48px] font-heading text-[#F6CB12] z-30">
+                  <h2 className="absolute bottom-[-10px] lg:bottom-[-20px] text-[32px] lg:text-[48px] font-heading text-[#F6CB12] z-30">
                     ALOK
                   </h2>
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div
+                  className={`
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl 
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+                    
+      ${activeCard === "alok" ? "flex" : "hidden"} lg:flex
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+                >
+                  {/* ❌ CLOSE BUTTON (kept) */}
+                  <button
+                    onClick={() => setActiveCard(null)}
+                    className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
+
                   {/* LEFT CONTENT */}
-                  <div className="w-1/2 p-6 flex flex-col ">
-                    <p className="text-[14px] text-black/70 leading-relaxed">
+                  <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                    <p className="text-[13px] lg:text-[14px] font-body text-black/70 leading-relaxed">
                       Momentum is his default setting.
                       <br />
                       <br />
@@ -234,29 +284,25 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                   </div>
 
                   {/* RIGHT SIDE */}
-                  <div className="w-1/2 relative flex items-center justify-center ">
-                    {/* Circle */}
-                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                    {/* Image */}
+                  <div className="w-full lg:w-1/2 relative flex items-center justify-center min-h-[250px] lg:min-h-full px-4 lg:px-0">
+                    {/* MAIN IMAGE (fixed scaling) */}
                     <img
                       src={person2}
-                      className="h-full  object-contain z-10"
+                      className="max-h-[250px] lg:max-h-full object-contain z-10"
                       style={{ transform: "scaleX(-1)" }}
                       alt=""
                     />
+
+                    {/* BG IMAGE (kept, just responsive fix) */}
                     <img
                       src={team2bg}
-                      className="h-[600px] absolute right-[-80px] object-contain z-0"
+                      className="h-[350px] lg:h-[600px] absolute right-[-20px] lg:right-[-80px] object-contain z-0"
                       alt=""
                     />
-
-                    {/* Background Text */}
-                    {/* <div className="absolute text-[120px] font-bold text-white/20">
-                      NS
-                    </div> */}
                   </div>
-                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+
+                  {/* BOTTOM TEXT */}
+                  <div className="absolute lg:text-black text-[#F6CB12] lg:text-left text-center lg:left-[20px] w-full bottom-0 font-heading text-[26px] lg:text-[50px] leading-none z-30">
                     The Engine
                   </div>
                 </div>
@@ -265,28 +311,49 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
             <div className="lg:flex lg:gap-20 lg:pb-20 items-center">
               {/* card3 */}
-              <div className="relative group lg:w-[320px] h-[320px]">
+              <div className="relative group w-full mx-auto lg:w-[320px] h-auto lg:h-[320px]">
                 {/* SMALL CARD */}
-                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                <div
+                  onClick={() => setActiveCard("samay")}
+                  className="relative w-full h-[320px] flex items-end justify-center transition duration-300 lg:group-hover:scale-105 z-10"
+                >
                   <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
                   <img
                     src={person3}
-                    className="absolute bottom-0 z-20 h-[390px] object-contain"
+                    className="absolute bottom-0 z-20 h-[320px] lg:h-[390px] object-contain"
                     alt=""
                   />
 
-                  {/* FONT SAME */}
-                  <h2 className="absolute bottom-[-15px] text-[35px] font-heading text-[#F6CB12] z-30">
+                  <h2 className="absolute bottom-[-10px] lg:bottom-[-15px] text-[28px] lg:text-[35px] font-heading text-[#F6CB12] z-30">
                     SAMAY
                   </h2>
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div
+                  className={`
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl 
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      ${activeCard === "samay" ? "flex" : "hidden"} lg:flex
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+                >
+                  {/* ❌ CLOSE BUTTON */}
+                  <button
+                    onClick={() => setActiveCard(null)}
+                    className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
+
                   {/* LEFT TEXT */}
-                  <div className="w-1/2 p-6 flex flex-col ">
-                    <p className="text-[14px] text-black/70 leading-relaxed">
+                  <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                    <p className="text-[13px] font-body lg:text-[14px] text-black/70 leading-relaxed">
                       Samay believes two things make work better: urgency and a
                       well-timed “gali”.
                       <br />
@@ -299,41 +366,34 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                       Things may start slow… but once Samay gets going, the room
                       usually gets a lot more lively.
                     </p>
-
-                    <p className="mt-4 font-bold text-[12px]">STRATEGIST</p>
                   </div>
 
                   {/* RIGHT SIDE */}
-                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
-                    {/* Circle */}
-                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                    {/* Image */}
+                  <div className="w-full lg:w-1/2 relative flex items-center justify-center min-h-[260px] lg:min-h-full px-4 lg:px-0 bg-gradient-to-b">
+                    {/* MAIN IMAGE */}
                     <img
                       src={person3}
-                      className="h-[380px] object-contain z-30 "
-                      // style={{ transform: "scaleX(-1)" }}
-                      alt=""
-                    />
-                    <img
-                      src={card3bg1}
-                      className="h-[380px] right-[-120px] top-[-20px] absolute object-contain z-10 "
-                      // style={{ transform: "scaleX(-1)" }}
-                      alt=""
-                    />
-                    <img
-                      src={card3bg2}
-                      className=" h-[300px] top-[0px] left-0 absolute object-contain z-10 "
-                      // style={{ transform: "scaleX(-1)" }}
+                      className=" lg:h-[360px] h-[290px] absolute bottom-0 z-30"
                       alt=""
                     />
 
-                    {/* Background Text */}
-                    <div className="absolute text-[120px] font-bold text-white/20">
-                      NS
-                    </div>
+                    {/* BG 1 (fixed overflow) */}
+                    <img
+                      src={card3bg1}
+                      className="h-[260px] lg:h-[380px] right-[-30px] lg:right-[-120px] top-[-10px] lg:top-[-20px] absolute object-contain z-10"
+                      alt=""
+                    />
+
+                    {/* BG 2 (fixed scaling) */}
+                    <img
+                      src={card3bg2}
+                      className="h-[230px] w-full lg:h-[300px] top-[0px] left-0 absolute object-contain z-10"
+                      alt=""
+                    />
                   </div>
-                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+
+                  {/* BOTTOM TEXT */}
+                  <div className="absolute  lg:text-left text-center lg:text-black text-[#F6CB12] lg:left-[20px] w-full bottom-0 font-heading text-[24px] lg:text-[50px] leading-none z-30">
                     The Hype Specialist
                   </div>
                 </div>
@@ -341,7 +401,10 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
               {/* card 4 */}
               <div className="relative group lg:w-[320px] h-[320px]">
                 {/* SMALL CARD */}
-                <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+                <div
+                  onClick={() => setActiveCard("aryan")}
+                  className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10"
+                >
                   <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
                   <img
@@ -350,17 +413,34 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                     alt=""
                   />
 
-                  {/* FONT SAME */}
                   <h2 className="absolute bottom-[-12px] text-[33px] font-heading text-[#F6CB12] z-30">
                     ARYAN
                   </h2>
                 </div>
 
                 {/* 🔥 BIG EXPANDED CARD */}
-                <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+                <div
+                  className={`
+      ${activeCard === "aryan" ? "flex" : "hidden"} lg:flex
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100 
+    `}
+                >
+                  {/* ❌ CLOSE BUTTON (mobile only) */}
+                  <button
+                    onClick={() => setActiveCard(null)}
+                    className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+                  >
+                    ✕
+                  </button>
+
                   {/* LEFT TEXT */}
-                  <div className="w-1/2 p-6 flex flex-col ">
-                    <p className="text-[14px] text-black/70 leading-relaxed">
+                  <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                    <p className="text-[14px] font-body text-black/70 leading-relaxed">
                       A perfect example of Gen-Z — moody sometimes, childish
                       occasionally, and randomly announcing “Break chahiye.”
                       <br />
@@ -372,41 +452,33 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                       Because once Aryan enters his creative zone, the visuals
                       tend to come out fantastic.
                     </p>
-
-                    {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
                   </div>
 
                   {/* RIGHT SIDE */}
-                  <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
-                    {/* Circle */}
-                    {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                    {/* Image */}
+                  <div className="w-full lg:w-1/2 relative flex items-end justify-center min-h-[260px] lg:min-h-full overflow-hidden px-2">
+                    {/* MAIN IMAGE */}
                     <img
                       src={person4}
-                      className=" w-full  z-30 "
-                      // style={{ transform: "scaleX(-1)" }}
-                      alt=""
-                    />
-                    <img
-                      src={card4bg1}
-                      className="h-[380px] right-[-0px] top-[-20px] absolute object-contain z-10 "
-                      // style={{ transform: "scaleX(-1)" }}
-                      alt=""
-                    />
-                    <img
-                      src={card4bg2}
-                      className="  bottom-[-15px] right-[-90px] absolute object-contain z-0 "
-                      // style={{ transform: "scaleX(-1)" }}
+                      className=" z-30  absolute bottom-0 h-[420px] lg:h-[500px] object-contain"
                       alt=""
                     />
 
-                    {/* Background Text */}
-                    {/* <div className="absolute text-[120px] font-bold text-white/20">
-                      NS
-                    </div> */}
+                    {/* BACKGROUNDS (scaled properly for mobile) */}
+                    <img
+                      src={card4bg1}
+                      className="h-[260px] w-full lg:h-[380px] right-0 top-[-20px] absolute object-contain z-10"
+                      alt=""
+                    />
+
+                    <img
+                      src={card4bg2}
+                      className="h-[290px] w-full lg:h-auto bottom-0 right-[-30px] lg:right-[-90px] absolute object-contain z-0"
+                      alt=""
+                    />
                   </div>
-                  <div className="absolute left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+
+                  {/* BOTTOM TITLE */}
+                  <div className="absolute lg:text-black lg:text-left text-center text-[#F6CB12] lg:left-[20px] bottom-0 w-full font-heading text-[28px] lg:text-[50px] leading-none z-30">
                     The Visual Alchemist
                   </div>
                 </div>
@@ -452,7 +524,10 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
         <div className=" lg:flex gap-20">
           <div className="relative group lg:w-[320px] h-[320px]">
             {/* SMALL CARD */}
-            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+            <div
+              onClick={() => setActiveCard("pratyosh")}
+              className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10 cursor-pointer"
+            >
               <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
@@ -461,17 +536,34 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 alt=""
               />
 
-              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[28px] font-bold text-[#F6CB12] z-30">
                 PRATYOSH
               </h2>
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div
+              className={`
+      ${activeCard === "pratyosh" ? "flex" : "hidden"} lg:flex
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+            >
+              {/* ❌ CLOSE BUTTON (mobile only) */}
+              <button
+                onClick={() => setActiveCard(null)}
+                className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                ✕
+              </button>
+
               {/* LEFT TEXT */}
-              <div className="w-1/2 p-6 flex flex-col ">
-                <p className="text-[14px] text-black/70 leading-relaxed">
+              <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                <p className="text-[14px] font-body text-black/70 leading-relaxed">
                   In the internet economy, attention is the real currency.
                   <br />
                   <br />
@@ -480,36 +572,33 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                   relationships, he ensures brands don’t just appear on feeds —
                   they stay in people’s minds.
                 </p>
-
-                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
-                {/* Circle */}
-                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                {/* Image */}
+              <div className="w-full lg:w-1/2 relative flex items-end justify-center min-h-[260px] lg:min-h-full overflow-hidden px-2">
+                {/* MAIN IMAGE */}
                 <img
                   src={pratyush}
-                  className="h-[390px] object-contain w-full  z-30 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className=" z-30 h-[250px] absolute bottom-0 lg:h-[390px] object-contain"
                   alt=""
                 />
+
+                {/* BACKGROUNDS (scaled for mobile) */}
                 <img
                   src={card3bg1}
-                  className="h-[380px] right-[-90px] top-[-20px] absolute object-contain z-0 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[260px] lg:h-[380px] right-[-30px] lg:right-[-90px] top-0 absolute object-contain z-0"
                   alt=""
                 />
+
                 <img
                   src={colorBall}
-                  className=" bottom-[-50px] right-[-20px] absolute object-contain z-10 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[220px] w-full lg:h-auto bottom-[30px] lg:bottom-[-50px]  lg:right-[-20px] absolute object-contain z-10"
                   alt=""
                 />
               </div>
-              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[50px] leading-none z-30 ">
+
+              {/* BOTTOM TITLE */}
+              <div className="absolute  lg:text-black text-[#F6CB12] lg:max-w-[70%] lg:text-left text-center lg:left-[20px] bottom-0 w-full font-heading text-[26px] lg:text-[50px] leading-none z-30">
                 The Attention Architect
               </div>
             </div>
@@ -517,7 +606,10 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
           <div className="relative group lg:w-[320px] h-[320px]">
             {/* SMALL CARD */}
-            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+            <div
+              onClick={() => setActiveCard("papun")}
+              className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10 cursor-pointer"
+            >
               <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
@@ -526,17 +618,34 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 alt=""
               />
 
-              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
                 PAPUN
               </h2>
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] left-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div
+              className={`
+      ${activeCard === "papun" ? "flex" : "hidden"} lg:flex
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      lg:absolute lg:bottom-[-10px] lg:left-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+            >
+              {/* ❌ CLOSE BUTTON (mobile only) */}
+              <button
+                onClick={() => setActiveCard(null)}
+                className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                ✕
+              </button>
+
               {/* LEFT TEXT */}
-              <div className="w-1/2 p-6 flex flex-col ">
-                <p className="text-[14px] text-black/70 leading-relaxed">
+              <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col text-justify">
+                <p className="text-[14px] font-body text-black/70 leading-relaxed">
                   Some people notice details. Papun notices the details inside
                   the details.
                   <br />
@@ -549,36 +658,33 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                   up dropping insights about the market that make the whole team
                   rethink things.
                 </p>
-
-                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
-                {/* Circle */}
-                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                {/* Image */}
+              <div className="w-full lg:w-1/2 relative flex items-end justify-center min-h-[260px] lg:min-h-full overflow-hidden px-2">
+                {/* MAIN IMAGE */}
                 <img
                   src={pupun}
-                  className="h-[375px] object-contain w-full  z-30 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="absolute bottom-0 z-30 h-[250px] lg:h-[375px] object-contain"
                   alt=""
                 />
+
+                {/* BACKGROUNDS (scaled for mobile) */}
                 <img
                   src={card4bg2}
-                  className="h-[380px] right-[-40px] top-[10px] absolute object-contain z-0 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[260px] lg:h-[380px] right-[-10px] lg:right-[-40px] top-[10px] absolute object-contain z-0"
                   alt=""
                 />
+
                 <img
                   src={redCloth}
-                  className=" top-[10px] right-[-20px] absolute object-contain z-10 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[240px] w-full lg:h-auto top-[10px] right-[-10px] lg:right-[-20px] absolute object-contain z-10"
                   alt=""
                 />
               </div>
-              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[40px] leading-none z-30 ">
+
+              {/* BOTTOM TITLE */}
+              <div className="absolute  lg:text-black lg:text-left text-center text-[#F6CB12] lg:max-w-[70%] lg:left-[20px] bottom-0 w-full font-heading text-[26px] lg:text-[40px] leading-none z-30">
                 The Chief Aesthetic Officer
               </div>
             </div>
@@ -586,7 +692,10 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
 
           <div className="relative group lg:w-[320px] h-[320px]">
             {/* SMALL CARD */}
-            <div className="relative w-full h-full flex items-end justify-center transition duration-300 group-hover:scale-105 z-10">
+            <div
+              onClick={() => setActiveCard("debasis")}
+              className="relative w-full h-full flex items-end justify-center transition duration-300 lg:group-hover:scale-105 z-10 cursor-pointer"
+            >
               <div className="absolute bottom-0 w-[200px] h-[260px] bg-[#d9d9d9] rounded-md"></div>
 
               <img
@@ -595,17 +704,34 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                 alt=""
               />
 
-              {/* FONT SAME */}
               <h2 className="absolute font-heading bottom-[-12px] text-[33px] font-bold text-[#F6CB12] z-30">
                 DEBASIS
               </h2>
             </div>
 
             {/* 🔥 BIG EXPANDED CARD */}
-            <div className="absolute bottom-[-10px] right-0 w-[700px] h-[380px] bg-white shadow-xl rounded-xl opacity-0 scale-95 lg:group-hover:opacity-100 lg:group-hover:scale-100 transition duration-300 z-50 flex overflow-hidden pointer-events-none">
+            <div
+              className={`
+      ${activeCard === "debasis" ? "flex" : "hidden"} lg:flex
+      relative mt-6 w-[95%] mx-auto bg-white shadow-xl rounded-xl 
+      transition duration-300 z-50 flex flex-col lg:flex-row overflow-hidden
+
+      lg:absolute lg:bottom-[-10px] lg:right-0 lg:w-[700px] lg:h-[380px]
+      lg:opacity-0 lg:scale-95 lg:pointer-events-none
+      lg:group-hover:opacity-100 lg:group-hover:scale-100
+    `}
+            >
+              {/* ❌ CLOSE BUTTON */}
+              <button
+                onClick={() => setActiveCard(null)}
+                className="lg:hidden absolute top-3 right-3 z-50 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center"
+              >
+                ✕
+              </button>
+
               {/* LEFT TEXT */}
-              <div className="w-1/2 p-6 flex flex-col ">
-                <p className="text-[14px] text-black/70 leading-relaxed">
+              <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col">
+                <p className="text-[13px] font-body lg:text-[14px] text-black/70 leading-relaxed">
                   In a world where most creatives follow trends, Debasis studies
                   them… then quietly bends them.
                   <br />
@@ -617,36 +743,31 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
                   He may get confused sometimes, but instead of following
                   others, he finds his own answers.
                 </p>
-
-                {/* <p className="mt-4 font-bold text-[12px]">STRATEGIST</p> */}
               </div>
 
               {/* RIGHT SIDE */}
-              <div className="w-1/2 relative flex items-center justify-center bg-gradient-to-b ">
-                {/* Circle */}
-                {/* <div className="absolute top-4 right-4 w-[80px] h-[80px] rounded-full bg-gradient-to-r from-yellow-400 to-orange-500"></div> */}
-
-                {/* Image */}
+              <div className="w-full lg:w-1/2 relative flex items-center justify-center min-h-[260px] lg:min-h-full overflow-hidden">
                 <img
                   src={person5}
-                  className="h-[375px] object-contain w-full  z-30 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[290px] absolute bottom-0 lg:h-[375px] object-contain w-full z-30"
                   alt=""
                 />
+
                 <img
                   src={card4bg2}
-                  className="h-[380px] right-[-40px] top-[20px] absolute object-contain z-0 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="h-[260px] lg:h-[380px] right-[-20px] lg:right-[-40px] top-[10px] absolute object-contain z-0"
                   alt=""
                 />
+
                 <img
                   src={greenBall}
-                  className=" top-[10px] right-[-20px] absolute object-contain z-10 "
-                  // style={{ transform: "scaleX(-1)" }}
+                  className="top-[10px] h-full w-full right-[-10px] lg:right-[-20px] absolute object-contain z-10  lg:w-auto"
                   alt=""
                 />
               </div>
-              <div className="absolute max-w-[70%] left-[20px] w-full bottom-0 font-heading text-[40px] leading-none z-30 ">
+
+              {/* BOTTOM TEXT */}
+              <div className="absolute lg:text-black text-[#F6CB12] lg:text-left text-center lg:max-w-[70%]  lg:left-[20px] w-full bottom-0 font-heading text-[24px] lg:text-[40px] leading-none z-30">
                 The Visual Designer
               </div>
             </div>
