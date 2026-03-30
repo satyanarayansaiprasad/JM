@@ -178,7 +178,7 @@ const CaseStudies = () => {
             </span>
           </h2>
 
-          <p className="mt-6 text-gray-700 leading-relaxed font-body text-base max-w-xl">
+          <p className="mt-6 text-gray-700 leading-relaxed text-justify font-body text-base max-w-xl">
             {caseStudy}
           </p>
         </motion.div>

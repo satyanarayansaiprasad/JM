@@ -18,6 +18,14 @@
   font-family: "MontserratItalic";
   src: url("/public/fonts/Montserrat-Italic.ttf") format("truetype");
 }
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("/public/fonts/Montserrat-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "MontserratBlack";
+  src: url("/public/fonts/Montserrat-Black.ttf") format("truetype");
+}
 
 @font-face {
   font-family: "Sage";

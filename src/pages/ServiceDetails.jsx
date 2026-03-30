@@ -59,7 +59,7 @@ const ServiceDetails = () => {
               className="relative w-full lg:w-[65%]"
             >
               {/* Gray Background */}
-              <div className="relative rounded-[30px] h-[260px] lg:h-[360px] bg-[#e9e9e9] overflow-hidden z-20">
+              <div className="relative rounded-[30px] h-[200px] lg:h-[360px] bg-[#e9e9e9] overflow-hidden z-20">
                 <div className="absolute inset-0 z-30 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
               </div>
 
@@ -70,7 +70,7 @@ const ServiceDetails = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="absolute bottom-0 left-0 lg:left-20 h-[320px] lg:h-[440px] z-30"
+                className="absolute bottom-0 left-0 lg:left-20  lg:h-[440px] z-30 object-contain"
               />
             </motion.div>
 
@@ -175,12 +175,12 @@ const ServiceDetails = () => {
 
         <div className="text-center pt-4 lg:px-0 px-4 lg:text-[24px] text-[16px] leading-[1] max-w-[936px] mx-auto font-body">
           We don&apos;t just post content, we create{" "}
-          <span className="lg:text-[64px] text-[20px] font-semibold">
+          <span className="lg:text-[64px] text-[30px] font-bodyItalic">
             campaigns
           </span>{" "}
           that grow your brand, engage your audience, and drive real business
           results. Here&apos;s how{" "}
-          <span className="font-semibold lg:text-[48px] text-[25px] text-[#FEC107]">
+          <span className="font-bodyItalic lg:text-[48px] text-[30px] text-[#FEC107]">
             we do
           </span>{" "}
           it:
@@ -195,7 +195,7 @@ const ServiceDetails = () => {
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Eye-catching graphics, videos, and posts that get noticed
               </div>
             </div>
@@ -207,7 +207,7 @@ const ServiceDetails = () => {
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Custom plans for Instagram, Facebook, LinkedIn, and more.
               </div>
             </div>
@@ -219,7 +219,7 @@ const ServiceDetails = () => {
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Build relationships, respond fast, keep your audience engaged.
               </div>
             </div>
@@ -231,7 +231,7 @@ const ServiceDetails = () => {
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Track, analyze, and optimize every campaign.
               </div>
             </div>
@@ -243,7 +243,7 @@ const ServiceDetails = () => {
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
-              <div className="text-[16px] lg:text-[16px] pt-3">
+              <div className="text-[16px] font-body lg:text-[16px] pt-3">
                 Smart ads that deliver measurable ROI.
               </div>
             </div>

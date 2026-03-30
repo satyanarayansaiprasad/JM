@@ -59,7 +59,7 @@ const ServiceDetailTwo = () => {
               className="relative w-full lg:w-[65%]"
             >
               {/* Gray Background */}
-              <div className="relative rounded-[30px] h-[260px] lg:h-[360px] bg-[#e9e9e9] overflow-hidden z-20">
+              <div className="relative rounded-[30px] h-[200px] lg:h-[360px] bg-[#e9e9e9] overflow-hidden z-20">
                 <div className="absolute inset-0 z-30 bg-[linear-gradient(152.97deg,rgba(21,21,21,0.2)_0%,rgba(21,21,21,0)_100%)]"></div>
               </div>
 
@@ -70,7 +70,7 @@ const ServiceDetailTwo = () => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="absolute bottom-0 left-0 lg:left-0 h-[250px] lg:w-[640px] lg:h-[390px] z-30"
+                className="absolute bottom-0 left-0 lg:left-0 lg:w-[640px] lg:h-[390px] z-30 object-contain"
               />
             </motion.div>
 
@@ -176,12 +176,12 @@ const ServiceDetailTwo = () => {
         </div>
         <div className="text-center pt-4  lg:text-[24px] lg:px-0 px-6 leading-[1] lg:max-w-[936px] mx-auto font-body">
           We don’t just run ads, we create campaigns that deliver&nbsp;
-          <span className="lg:text-[64px] text-[30px] font-semibold">
+          <span className="lg:text-[64px] font-bodyItalic text-[30px] font-semibold">
             measurable results
           </span>
           &nbsp; generate leads, and grow your business. Here's how we make
           every &nbsp;
-          <span className="font-semibold lg:text-[48px] text-[30px] text-[#FEC107]">
+          <span className="font-semibold lg:text-[48px] font-bodyItalic text-[30px] text-[#FEC107]">
             click count
           </span>
         </div>
@@ -194,7 +194,7 @@ const ServiceDetailTwo = () => {
                 src={servicedetailrow1}
                 alt="Service Detail Row 1"
               />
-              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+              <div className=" text-[16px] font-body lg:text-[15px] pt-3">
                 Ads on Facebook, Instagram, LinkedIn that actually convert.
               </div>
             </div>
@@ -206,7 +206,7 @@ const ServiceDetailTwo = () => {
                 src={servicedetailrow2}
                 alt="Service Detail Row 2"
               />
-              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+              <div className="font-body text-[16px] lg:text-[15px] pt-3">
                 Targeted search and display ads to capture ready-to-buy leads.
               </div>
             </div>
@@ -218,7 +218,7 @@ const ServiceDetailTwo = () => {
                 src={servicedetailrow3}
                 alt="Service Detail Row 3"
               />
-              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+              <div className="font-body text-[16px] lg:text-[15px] pt-3">
                 Reconnect with visitors who didn’t convert the first time.
               </div>
             </div>
@@ -230,7 +230,7 @@ const ServiceDetailTwo = () => {
                 src={servicedetailrow4}
                 alt="Service Detail Row 4"
               />
-              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+              <div className="font-body text-[16px] lg:text-[15px] pt-3">
                 Make your landing pages and funnels work harder.
               </div>
             </div>
@@ -242,7 +242,7 @@ const ServiceDetailTwo = () => {
                 src={servicedetailrow5}
                 alt="Service Detail Row 5"
               />
-              <div className="font-sans text-[16px] lg:text-[15px] pt-3">
+              <div className="font-body text-[16px] lg:text-[15px] pt-3">
                 Measure, analyze, and optimize every campaign for maximum ROI.
               </div>
             </div>

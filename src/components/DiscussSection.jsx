@@ -26,17 +26,17 @@ const DiscussSection = () => {
   }, []);
   return (
     <div>
-      <div className=" text-justify p-4 lg:hidden block top-[20px] left-[20px] uppercase font-heading text-[44px] leading-none">
+      <div className=" text-justify p-4 lg:hidden block top-[30px] left-[30px]  font-heading text-[54px] leading-none">
         Chalo <span className="text-[#FEC107]">Discuss</span> <br />
         Karein
         <br />
-        <span className="text-[30px] font-script leading-none">
+        <span className="text-[40px] font-script leading-none">
           why Jugadu Marketers{" "}
         </span>
       </div>
       <div className="flex justify-center relative ">
-        <div className="lg:flex items-center gap-24 py-20">
-          <div>
+        <div className="lg:flex items-center gap-24 lg:py-20 lg:pb-0 pb-20 ">
+          <div className="lg:block hidden">
             <div className="relative">
               <img
                 src={person3}
@@ -50,12 +50,12 @@ const DiscussSection = () => {
                 creative ideas
               </div>
               <div className="h-[170px] w-[170px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07] hidden lg:flex items-center justify-center text-center mx-auto absolute top-[40px] left-[-70px] z-10 rounded-full p-4">
-                <p className="text-white text-[20px] text-center leading-tight">
+                <p className="text-white text-[20px] font-bodyBlack text-center leading-tight">
                   Ideas Ki Factory – Har Idea Jugadu Style
                 </p>
               </div>
-              <div className="h-[150px] w-[150px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07]  lg:hidden flex items-center justify-center text-center mx-auto absolute top-[0px] right-[-10px] z-10 rounded-full p-4">
-                <p className="text-white text-[15px] text-center leading-tight">
+              <div className="h-[150px] w-[150px] bg-gradient-to-l  from-[#FEC107] to-[#FE6A07]  lg:hidden flex items-center justify-center text-center mx-auto absolute top-[0px] right-[-10px] z-10 rounded-full p-4">
+                <p className="text-white text-[15px] font-bodyBlack text-center leading-tight">
                   Ideas Ki Factory – Har Idea Jugadu Style
                 </p>
               </div>
@@ -76,17 +76,17 @@ const DiscussSection = () => {
                   3+ Years Experience
                 </div>
                 <div className="h-[170px] w-[170px] bg-[#39AEB9] hidden lg:flex items-center justify-center text-center mx-auto absolute top-[150px] right-[-134px] z-10 rounded-full p-4">
-                  <p className="text-white text-[20px] text-left leading-tight">
+                  <p className="text-white text-[20px] font-bodyBlack text-left leading-tight">
                     Chhota <br /> Packet, <br /> Bada <br /> Dhamaka
                   </p>
                 </div>
                 <div className="h-[150px] w-[150px] bg-[#39AEB9] lg:hidden flex items-center justify-center text-center mx-auto absolute top-[200px] right-[-10px] z-10 rounded-full p-4">
-                  <p className="text-white text-[15px] text-left leading-tight">
+                  <p className="text-white text-[15px] font-bodyBlack text-left leading-tight">
                     Chhota <br /> Packet, <br /> Bada <br /> Dhamaka
                   </p>
                 </div>
               </div>
-              <div className="relative lg:pt-0 pt-10">
+              <div className="relative lg:pt-0 pt-10 ps-0 lg:ps-[20px]">
                 <img
                   src={person2}
                   alt="Person 3"
@@ -98,8 +98,8 @@ const DiscussSection = () => {
                 <div className="absolute lg:hidden block bottom-[80px] left-0  font-sm font-semibold text-black text-center">
                   169+ Campaigns
                 </div>
-                <div className="h-[170px] hidden w-[170px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07] lg:flex items-center justify-center text-center mx-auto absolute top-[-40px] right-[-60px] z-10 rounded-full p-4">
-                  <p className="text-white text-[20px] text-left leading-tight">
+                <div className="h-[170px] hidden w-[170px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07] lg:flex items-center justify-center text-center mx-auto absolute top-[-40px] left-[-67px] z-10 rounded-full p-4">
+                  <p className="text-white text-[20px] font-bodyBlack text-left leading-tight">
                     Picture
                     <br />
                     Abhi Baaki <br />
@@ -107,12 +107,37 @@ const DiscussSection = () => {
                   </p>
                 </div>
                 <div className="h-[150px] lg:hidden w-[150px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07] flex items-center justify-center text-center mx-auto absolute top-[128px] right-[-20px] z-10 rounded-full p-4">
-                  <p className="text-white text-[15px] text-left leading-tight">
+                  <p className="text-white text-[15px] font-bodyBlack text-left leading-tight">
                     Picture
                     <br />
                     Abhi Baaki <br />
                     Hai, Boss
                   </p>
+                </div>
+              </div>
+              <div className="lg:hidden block">
+                <div className="relative">
+                  <img
+                    src={person3}
+                    alt="Person 1"
+                    className="lg:h-[501px] h-[370px] lg:w-[385px] object-contain "
+                  />
+                  <div className="absolute lg:block hidden left-0 top-2/3  font-sm font-semibold text-black text-center">
+                    creative ideas
+                  </div>
+                  <div className="absolute lg:hidden block right-[20px] top-2/3  font-sm font-semibold text-black text-center">
+                    creative ideas
+                  </div>
+                  <div className="h-[170px] w-[170px] bg-gradient-to-l from-[#FEC107] to-[#FE6A07] hidden lg:flex items-center justify-center text-center mx-auto absolute top-[40px] left-[-70px] z-10 rounded-full p-4">
+                    <p className="text-white text-[20px] font-bodyBlack text-center leading-tight">
+                      Ideas Ki Factory – Har Idea Jugadu Style
+                    </p>
+                  </div>
+                  <div className="h-[150px] w-[150px] bg-gradient-to-l  from-[#FEC107] to-[#FE6A07]  lg:hidden flex items-center justify-center text-center mx-auto absolute top-[0px] right-[-10px] z-10 rounded-full p-4">
+                    <p className="text-white text-[15px] font-bodyBlack text-center leading-tight">
+                      Ideas Ki Factory – Har Idea Jugadu Style
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -129,14 +154,14 @@ const DiscussSection = () => {
                 <div className="absolute bottom-[90px] lg:max-w-[100px] lg:hidden block text-left right-0  font-sm font-semibold text-black ">
                   Cost effective solutions
                 </div>
-                <div className="h-[170px] w-[170px] bg-gradient-to-l hidden from-[#FEC107] to-[#FE6A07] lg:flex items-center justify-center text-center mx-auto absolute bottom-[130px] left-[-130px] z-10 rounded-full p-4">
-                  <p className="text-white text-[20px] text-center leading-tight">
-                    Ideas Ki Factory – Har Idea Jugadu Style
+                <div className="h-[170px] w-[170px] bg-gradient-to-l hidden from-[#FEC107] to-[#FE6A07] lg:flex items-center justify-center text-center mx-auto absolute bottom-[120px] right-[-110px] z-10 rounded-full p-4">
+                  <p className="text-white text-[20px] font-bodyBlack text-center leading-tight">
+                    Budget Se Smart Solutions Tak Ka Safar
                   </p>
                 </div>
                 <div className="h-[150px] w-[150px] bg-gradient-to-l lg:hidden from-[#FEC107] to-[#FE6A07] flex items-center justify-center text-center mx-auto absolute bottom-[160px] right-[20px] z-10 rounded-full p-4">
-                  <p className="text-white text-[15px] text-center leading-tight">
-                    Ideas Ki Factory – Har Idea Jugadu Style
+                  <p className="text-white text-[15px] font-bodyBlack text-center leading-tight">
+                    Budget Se Smart Solutions Tak Ka Safar
                   </p>
                 </div>
               </div>
@@ -153,12 +178,12 @@ const DiscussSection = () => {
                   Data driven results
                 </div>
                 <div className="h-[170px] w-[170px] bg-[#39AEB9] hidden lg:flex items-center justify-center text-center mx-auto absolute bottom-[90px] right-[-60px] z-10 rounded-full p-4">
-                  <p className="text-white text-[20px] text-center leading-tight">
+                  <p className="text-white text-[20px] font-bodyBlack text-center leading-tight">
                     Numbers Ko Nahi, Results Ko Samjho
                   </p>
                 </div>
                 <div className="h-[150px] w-[150px] bg-[#39AEB9] lg:hidden flex items-center justify-center text-center mx-auto absolute bottom-[160px] right-[-20px] z-10 rounded-full p-4">
-                  <p className="text-white text-[15px] text-center leading-tight">
+                  <p className="text-white text-[15px] font-bodyBlack text-center leading-tight">
                     Numbers Ko Nahi, Results Ko Samjho
                   </p>
                 </div>
@@ -166,11 +191,11 @@ const DiscussSection = () => {
             </div>
           </div>
         </div>
-        <div className="absolute lg:block hidden top-[20px] left-[20px] uppercase font-heading text-[64px] leading-none">
+        <div className="absolute lg:block hidden top-[30px] left-[30px] font-heading text-[64px] leading-none">
           Chalo <span className="text-[#FEC107]">Discuss</span> <br />
           Karein
           <br />
-          <span className="text-[30px] font-script leading-none">
+          <span className="text-[60px] font-script leading-none">
             why Jugadu Marketers{" "}
           </span>
         </div>
