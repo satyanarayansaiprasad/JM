@@ -10,16 +10,26 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 const ClientsMarquee = () => {
   return (
-    <div className="w-full pt-20 py-10 overflow-hidden">
-      <div className="relative flex w-full overflow-hidden">
-        {/* TRACK */}
-        <div className="flex animate-marquee gap-16">
-          {[...logos, ...logos, ...logos].map((logo, index) => (
+    <div className="w-full pt-10 pb-10 overflow-hidden relative">
+      <div className="flex w-max animate-marquee whitespace-nowrap">
+        {/* Track contains two identical halves for a seamless loop */}
+        <div className="flex items-center gap-24 px-12 shrink-0">
+          {logos.map((logo, index) => (
             <img
-              key={index}
+              key={`set1-${index}`}
               src={logo}
               alt="client"
-              className="h-12 object-contain"
+              className="h-16 lg:h-24 w-auto object-contain"
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-24 px-12 shrink-0">
+          {logos.map((logo, index) => (
+            <img
+              key={`set2-${index}`}
+              src={logo}
+              alt="client"
+              className="h-16 lg:h-24 w-auto object-contain"
             />
           ))}
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Earth from "../assets/earth.png";
-import Cloud from "../assets/cloud.png";
-import Rocket from "../assets/rocket.png";
+import Earth from "../assets2/earth.webp";
+import Cloud from "../assets2/cloud.webp";
+import Rocket from "../assets2/rocket.webp";
 import { motion } from "framer-motion";
 const HomeHeroSection = () => {
   return (

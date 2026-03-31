@@ -39,6 +39,9 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   // 🔥 Animation variants
   const container = {
     hidden: {},
@@ -62,20 +65,56 @@ const Contact = () => {
     }));
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = (e) => {
+    e.preventDefault();
     const { firstName, lastName, email, phone, subject, message } = formData;
 
-    const mailSubject = subject || "Contact Form Submission";
-    const mailBody = `First Name: ${firstName}
-    Last Name: ${lastName}
-    Email: ${email}
-    Phone Number: ${phone}
-    Subject: ${subject}
-    Message:${message}`;
+    if (!firstName || !email || !message) {
+      alert("Please fill in the required fields (First Name, Email, and Message).");
+      return;
+    }
 
-    window.location.href = `mailto:jugadumarketers@gmail.com?subject=${encodeURIComponent(
-      mailSubject,
-    )}&body=${encodeURIComponent(mailBody)}`;
+    setIsLoading(true);
+
+    const emailDetails = {
+      from_name: `${firstName} ${lastName}`,
+      from_email: email,
+      phone_number: phone,
+      subject: subject || "New Contact Inquiry",
+      message: message,
+      type: "Contact Form Submission",
+    };
+
+    fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(emailDetails),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setIsSubmitted(true);
+          setIsLoading(false);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+          setTimeout(() => setIsSubmitted(false), 5000);
+        } else {
+          throw new Error(data.error || "Failed to send email");
+        }
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        setIsLoading(false);
+        alert("Something went wrong. Make sure your back-end server is running!");
+      });
   };
 
   return (
@@ -104,7 +143,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="text-[70px] absolute top-10 lg:top-0 right-0 md:text-[250px] font-script text-[#39AEB9] leading-none tracking-wide"
+            className="text-[54px] absolute top-14 lg:top-0 right-0 md:text-[250px] font-script text-[#39AEB9] leading-none tracking-wide"
           >
             Just Write
           </motion.div>
@@ -262,15 +301,27 @@ const Contact = () => {
               />
             </motion.div>
 
+            {/* Success Message */}
+            {isSubmitted && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-green-600 text-sm mt-4 text-right font-medium"
+              >
+                Form submitted successfully!
+              </motion.div>
+            )}
+
             {/* Button */}
             <motion.div variants={item} className="flex justify-end mt-10">
               <motion.button
                 onClick={handleSendMessage}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-black text-white px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition"
+                className="bg-black text-white px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition disabled:opacity-50"
+                disabled={isLoading}
               >
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </motion.button>
             </motion.div>
           </motion.div>

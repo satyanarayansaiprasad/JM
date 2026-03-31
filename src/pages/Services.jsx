@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import servicePerson1 from "../assets/service-person1.png";
-import trump from "../assets/trump.png";
-import akshay from "../assets/akshay.png";
-import rajni from "../assets/rajni.png";
+import servicePerson1 from "../assets2/service-person1.webp";
+import trump from "../assets2/trump.webp";
+import akshay from "../assets2/akshay.webp";
+import rajni from "../assets2/rajni.webp";
 import { useNavigate } from "react-router-dom";
 import Banner from "../components/Banner";
 
@@ -31,13 +31,13 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="relative z-10 flex items-center justify-center"
         >
-          <h1 className="w-full flex justify-between items-center font-black text-black leading-none text-[240px] lg:text-[750px]">
+          <h1 className="w-full flex justify-between items-center font-black text-black leading-none text-[140px] md:text-[240px] lg:text-[750px]">
             <span>O</span>
             <span>U</span>
             <span>R</span>
           </h1>
 
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-script text-[72px] lg:text-[240px] text-[#f5b400] rotate-[-8deg] z-20 lg:pt-32 pt-10">
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-script text-[48px] md:text-[72px] lg:text-[240px] text-[#f5b400] rotate-[-8deg] z-20 lg:pt-32 pt-6">
             Services
           </span>
         </motion.div>

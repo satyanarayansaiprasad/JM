@@ -186,9 +186,8 @@ const ChatColumn = ({ messages, colIndex }) => {
 const Testimonials = () => {
   const script = "About us";
   return (
-    <section className="w-full bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-4">
-      <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-10 overflow-hidden">
-        <div className=" mx-auto flex flex-col">
+    <section className="w-full bg-white px-4 pt-10 pb-20 sm:px-6 lg:px-4 overflow-hidden">
+      <div className=" mx-auto flex flex-col">
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -236,7 +235,6 @@ const Testimonials = () => {
             ))}
           </motion.div>
         </div>
-      </section>
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 lg:gap-8">
         {testimonialColumns.map((column, idx) => (

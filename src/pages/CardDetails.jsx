@@ -1,15 +1,15 @@
 /* eslint-disable default-case */
 import React from "react";
 
-import Card2 from "../assets/card2.png";
-import Card2top from "../assets/card2-top.png";
-import Crad2Logo from "../assets/card2-logo.png";
-import Card3bg from "../assets/card3bg.png";
-import Card3Logo from "../assets/card3logo.png";
-import Card4bg from "../assets/card4bg.png";
-import Card4Logo from "../assets/card4logo.png";
-import Card1logo from "../assets/card1logo.png";
-import Card1bg from "../assets/card1bg.png";
+import Card2 from "../assets2/card2.webp";
+import Card2top from "../assets2/card2-top.webp";
+import Crad2Logo from "../assets2/card2-logo.webp";
+import Card3bg from "../assets2/card3bg.webp";
+import Card3Logo from "../assets2/card3logo.webp";
+import Card4bg from "../assets2/card4bg.webp";
+import Card4Logo from "../assets2/card4logo.webp";
+import Card1logo from "../assets2/card1logo.webp";
+import Card1bg from "../assets2/card1bg.webp";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 

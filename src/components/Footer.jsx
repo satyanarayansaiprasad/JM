@@ -1,6 +1,6 @@
 import React from "react";
-import footerPerson from "../assets/footer-person.png";
-import footerLogo from "../assets/footer-logo.png";
+import footerPerson from "../assets2/footer-person.webp";
+import footerLogo from "../assets2/footer-logo.webp";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 // import { i } from "framer-motion/client";
@@ -185,7 +185,7 @@ const Footer = () => {
           <div className="flex flex-col items-end">
             <div className="pr-10">
               <button
-                onClick={() => navigation("/contact-us")}
+                onClick={() => window.open("https://calendly.com/jugadumarketers/30min", "_blank")}
                 className="bg-yellow-500 text-black px-6 py-2 rounded-full mb-6"
               >
                 Make an appointment

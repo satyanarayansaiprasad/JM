@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import servicedetailrow1 from "../assets/service-detail2-row1.png";
-import servicedetailrow2 from "../assets/service-detail2-row2.png";
-import servicedetailrow3 from "../assets/service-detail2-row3.png";
-import servicedetailrow4 from "../assets/service-detail2-row4.png";
-import servicedetailrow5 from "../assets/service-detail-row5.png";
-import servicerDetailPerson1 from "../assets/service-detail-showperson.png";
-import TrumpColor from "../assets/trump-color.png";
+import servicedetailrow1 from "../assets2/service-detail2-row1.webp";
+import servicedetailrow2 from "../assets2/service-detail2-row2.webp";
+import servicedetailrow3 from "../assets2/service-detail2-row3.webp";
+import servicedetailrow4 from "../assets2/service-detail2-row4.webp";
+import servicedetailrow5 from "../assets2/service-detail-row5.webp";
+import servicerDetailPerson1 from "../assets2/service-detail-showperson.webp";
+import TrumpColor from "../assets2/trump-color.webp";
 import Banner from "../components/Banner";
 import { useNavigate } from "react-router-dom";
 

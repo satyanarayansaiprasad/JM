@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import Banner from "../components/Banner";
-import group from "../assets/teams.png";
-import person1 from "../assets/team-person1.png";
-import person2 from "../assets/team-person2.png";
-import person3 from "../assets/team-person3.png";
-import person4 from "../assets/team-person4.png";
-import person5 from "../assets/team-person5.png";
-import pupun from "../assets/pupun.png";
-import pratyush from "../assets/pratyush.png";
-import teamGroup from "../assets/team-group.png";
-import team2bg from "../assets/team-card-2-bg.png";
-import card3bg1 from "../assets/card3bg1.png";
-import card3bg2 from "../assets/card3bg2.png";
-import card4bg1 from "../assets/card3-bg1.png";
-import card4bg2 from "../assets/card3-bg-2.png";
-import colorBall from "../assets/colorBall.png";
-import redCloth from "../assets/red-cloth.png";
-import greenBall from "../assets/greenBall.png";
+import group from "../assets2/teams.webp";
+import person1 from "../assets2/team-person1.webp";
+import person2 from "../assets2/team-person2.webp";
+import person3 from "../assets2/team-person3.webp";
+import person4 from "../assets2/team-person4.webp";
+import person5 from "../assets2/team-person5.webp";
+import pupun from "../assets2/pupun.webp";
+import pratyush from "../assets2/pratyush.webp";
+import teamGroup from "../assets2/team-group.webp";
+import team2bg from "../assets2/team-card-2-bg.webp";
+import card3bg1 from "../assets2/card3bg1.webp";
+import card3bg2 from "../assets2/card3bg2.webp";
+import card4bg1 from "../assets2/card3-bg1.webp";
+import card4bg2 from "../assets2/card3-bg-2.webp";
+import colorBall from "../assets2/colorBall.webp";
+import redCloth from "../assets2/red-cloth.webp";
+import greenBall from "../assets2/greenBall.webp";
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   show: {
@@ -96,26 +96,26 @@ bg-[linear-gradient(270deg,#FEC107_0%,#FE6A07_100%)] flex items-center justify-c
           </svg>
         </motion.div>
 
-        <div className="lg:text-[128px] text-[48px] left-[10px] top-0 lg:top-[80px] z-10 lg:left-[74px] absolute font-heading leading-none">
+        <div className="lg:text-[128px] text-[42px] left-[10px] top-[10px] lg:top-[80px] z-10 lg:left-[74px] absolute font-heading leading-none">
           OUR <br />
           <span className="text-[#FEC107]">TEAM</span>
         </div>
 
-        <div className="lg:text-[190px] text-[50px] top-[10px] lg:top-[80px] z-0 right-[10px] lg:right-[104px] absolute font-script leading-none">
+        <div className="lg:text-[190px] text-[32px] top-[10px] lg:top-[80px] z-0 right-[10px] lg:right-[104px] absolute font-script leading-none text-right max-w-[180px] lg:max-w-none">
           {text}
         </div>
       </motion.div>
       <div className="lg:hidden block">
         <div>
           <div className="pt-6">
-            <div className="leading-none relative h-[200px] p-4">
-              <div className="font-heading text-[46px] leading-none">
+            <div className="leading-none relative h-[220px] p-4 overflow-visible">
+              <div className="font-heading text-[38px] md:text-[46px] leading-tight relative z-10">
                 THE <br /> <span className="text-[#FEC107]">BEHIND THE</span>
               </div>
-              <div className="text-[100px] font-script top-[0px] absolute left-[160px]">
+              <div className="text-[80px] font-script top-[0px] absolute right-[10px] z-0 opacity-90">
                 minds
               </div>
-              <div className="text-[190px] font-script bottom-[-40px] absolute left-[20px] text-[#39AEB9]">
+              <div className="text-[120px] font-script bottom-[-10px] absolute left-[20px] text-[#39AEB9] z-20">
                 magic
               </div>
             </div>

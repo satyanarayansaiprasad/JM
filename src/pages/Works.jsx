@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-import Card2 from "../assets/card2.png";
-import Card2top from "../assets/card2-top.png";
-import Crad2Logo from "../assets/card2-logo.png";
-import Card3bg from "../assets/card3bg.png";
-import Card3Logo from "../assets/card3logo.png";
-import Card4bg from "../assets/card4bg.png";
-import Card4Logo from "../assets/card4logo.png";
-import Card1logo from "../assets/card1logo.png";
-import Card1bg from "../assets/card1bg.png";
+import Card2 from "../assets2/card2.webp";
+import Card2top from "../assets2/card2-top.webp";
+import Crad2Logo from "../assets2/card2-logo.webp";
+import Card3bg from "../assets2/card3bg.webp";
+import Card3Logo from "../assets2/card3logo.webp";
+import Card4bg from "../assets2/card4bg.webp";
+import Card4Logo from "../assets2/card4logo.webp";
+import Card1logo from "../assets2/card1logo.webp";
+import Card1bg from "../assets2/card1bg.webp";
 import { useNavigate } from "react-router-dom";
 import Banner from "../components/Banner";
 
@@ -36,25 +36,58 @@ const Works = () => {
     name: "",
     email: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { placeholder, value } = e.target;
-
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [placeholder.toLowerCase()]: value,
+      [name]: value,
     }));
   };
-
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const { name, email } = formData;
 
-    const body = `Name: ${name}
-Email: ${email}`;
+    if (!name || !email) {
+      alert("Please fill in both name and email.");
+      return;
+    }
 
-    window.location.href = `mailto:jugadumarketers@gmail.com?subject=${encodeURIComponent(
-      "Work Inquiry",
-    )}&body=${encodeURIComponent(body)}`;
+    setIsLoading(true);
+
+    const emailDetails = {
+      from_name: name,
+      from_email: email,
+      subject: "New Work Inquiry",
+      message: `Work inquiry from ${name} (${email})`,
+      type: "Portfolio Work Inquiry",
+    };
+
+    fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(emailDetails),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          setIsSubmitted(true);
+          setIsLoading(false);
+          setFormData({ name: "", email: "" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+        } else {
+          throw new Error(data.error || "Failed to send email");
+        }
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        setIsLoading(false);
+        alert("Something went wrong. Make sure your back-end server is running!");
+      });
   };
 
   // 🔥 animation configs
@@ -97,7 +130,7 @@ Email: ${email}`;
             </span>
           </div>
 
-          <div className="ml-2 lg:ml-8 text-[180px] lg:text-[600px] font-bold leading-none">
+          <div className="ml-2 lg:ml-8 text-[100px] md:text-[180px] lg:text-[600px] font-bold leading-none">
             UR
           </div>
         </motion.div>
@@ -292,23 +325,36 @@ Email: ${email}`;
 
           <div className="max-w-md lg:ml-auto">
             <input
+              name="name"
               className="w-full bg-[#dcdcdc] p-4 mb-4"
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
             />
             <input
+              name="email"
               className="w-full bg-[#dcdcdc] p-4 mb-6"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
             />
 
+            {isSubmitted && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-green-600 font-medium mb-4"
+              >
+                Form submitted successfully!
+              </motion.p>
+            )}
+
             <button
               onClick={handleSubmit}
-              className="bg-[#2f2f2f] text-white px-10 py-4 hover:bg-black"
+              disabled={isLoading}
+              className="bg-[#2f2f2f] text-white px-10 py-4 hover:bg-black w-full disabled:opacity-50"
             >
-              Submit
+              {isLoading ? "Sending..." : "Submit"}
             </button>
           </div>
         </motion.div>

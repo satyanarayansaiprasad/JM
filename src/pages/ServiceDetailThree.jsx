@@ -1,13 +1,13 @@
 import React from "react";
-import akshay from "../assets/akshay3.png";
+import akshay from "../assets2/akshay3.webp";
 import { motion } from "framer-motion";
-import servicedetailrow1 from "../assets/service-detail3-row1.png";
-import servicedetailrow2 from "../assets/service-detail3-row2.png";
-import servicedetailrow3 from "../assets/service-detail3-row3.png";
-import servicedetailrow4 from "../assets/service-detail3-row4.png";
-import servicedetailrow5 from "../assets/service-detail3-row5.png";
-import servicedetailrow6 from "../assets/service-detail3-row6.png";
-import servicerDetailPerson1 from "../assets/service-detail-person-3.png";
+import servicedetailrow1 from "../assets2/service-detail3-row1.webp";
+import servicedetailrow2 from "../assets2/service-detail3-row2.webp";
+import servicedetailrow3 from "../assets2/service-detail3-row3.webp";
+import servicedetailrow4 from "../assets2/service-detail3-row4.webp";
+import servicedetailrow5 from "../assets2/service-detail3-row5.webp";
+import servicedetailrow6 from "../assets2/service-detail3-row6.webp";
+import servicerDetailPerson1 from "../assets2/service-detail-person-3.webp";
 import Banner from "../components/Banner";
 import { useNavigate } from "react-router-dom";
 

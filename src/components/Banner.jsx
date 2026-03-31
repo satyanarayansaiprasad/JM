@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import rightImg from "../assets/footer-ba2.png";
-import mountain from "../assets/mountain.png";
+import rightImg from "../assets2/footer-ba2.webp";
+import mountain from "../assets2/mountain.webp";
 import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
