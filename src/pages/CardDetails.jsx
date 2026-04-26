@@ -10,6 +10,8 @@ import Card4bg from "../assets2/card4bg.webp";
 import Card4Logo from "../assets2/card4logo.webp";
 import Card1logo from "../assets2/card1logo.webp";
 import Card1bg from "../assets2/card1bg.webp";
+import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 // Import Images for Kho Kho
 import KhoKhoImg1 from "../assets/kho kho/60985.jpg";
 import KhoKhoImg2 from "../assets/kho kho/60995.jpg";
