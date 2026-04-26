@@ -118,6 +118,7 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
     } else {
       window.onYouTubeIframeAPIReady = initPlayers;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [brand, videoIds]);
 
   React.useEffect(() => {
