@@ -77,7 +77,11 @@ const VIDEO_CASE_STUDIES = [
 // Unified Gallery Component showing both images and videos
 const BrandGallery = ({ videoIds, images, brand, layout }) => {
   const [playingIndex, setPlayingIndex] = React.useState(0);
+  const [currentImg, setCurrentImg] = React.useState(0);
   const isPortrait = layout === "portrait";
+
+  const nextImg = () => setCurrentImg((prev) => (prev + 1) % images.length);
+  const prevImg = () => setCurrentImg((prev) => (prev - 1 + images.length) % images.length);
 
   // Use the YouTube IFrame API to detect when a video ends
   React.useEffect(() => {
@@ -133,21 +137,65 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
   }, [playingIndex, brand]);
 
   return (
-    <div className="flex flex-col gap-12">
-      {/* IMAGES MASONRY/GRID */}
-      <div className={`grid gap-6 ${isPortrait ? "grid-cols-2 lg:grid-cols-4" : "grid-cols-1 md:grid-cols-3"}`}>
-        {images.map((img, idx) => (
-          <motion.div
-            key={`img-${idx}`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
-            viewport={{ once: true }}
-            className={`relative overflow-hidden rounded-3xl shadow-lg bg-gray-100 ${isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"}`}
-          >
-            <img src={img} alt={`${brand} study ${idx + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-          </motion.div>
-        ))}
+    <div className="flex flex-col gap-16">
+      {/* IMAGES SLIDER */}
+      <div className="relative group">
+        <div className="overflow-hidden rounded-[2rem] shadow-2xl bg-gray-100 aspect-video lg:aspect-[21/9]">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImg}
+              src={images[currentImg]}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="w-full h-full object-cover"
+              alt={`${brand} study ${currentImg + 1}`}
+            />
+          </AnimatePresence>
+
+          {/* Slider Overlay Info */}
+          <div className="absolute bottom-8 left-8 z-10">
+            <div className="flex items-center gap-4 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+              <span className="text-yellow-500 font-bold text-sm tracking-widest">
+                {String(currentImg + 1).padStart(2, '0')}
+              </span>
+              <div className="h-4 w-px bg-white/20"></div>
+              <span className="text-white/80 text-xs font-medium uppercase tracking-wider">
+                Project Gallery
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button 
+              onClick={prevImg}
+              className="w-14 h-14 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all transform hover:scale-110"
+            >
+              <FiChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={nextImg}
+              className="w-14 h-14 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all transform hover:scale-110"
+            >
+              <FiChevronRight size={24} />
+            </button>
+          </div>
+        </div>
+
+        {/* Thumbnails / Indicators */}
+        <div className="flex justify-center gap-3 mt-8">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentImg(idx)}
+              className={`h-1.5 transition-all duration-500 rounded-full ${
+                currentImg === idx ? "w-12 bg-yellow-500" : "w-4 bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* VIDEOS GRID */}
