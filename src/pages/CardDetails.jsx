@@ -45,34 +45,103 @@ const VIDEO_CASE_STUDIES = [
   }
 ];
 
-// Sequential Video Player Component
-const SequentialPlayer = ({ videoIds, brand, layout }) => {
+// Video Gallery Component showing all videos for a brand
+const VideoGallery = ({ videoIds, brand, layout }) => {
+  const [playingIndex, setPlayingIndex] = React.useState(0);
   const isPortrait = layout === "portrait";
-  const videoList = videoIds.join(",");
-  const firstVideo = videoIds[0];
+
+  // Use the YouTube IFrame API to detect when a video ends
+  React.useEffect(() => {
+    // Load YouTube IFrame API script if not already present
+    if (!window.YT) {
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // Function to handle player state changes
+    const onPlayerStateChange = (event) => {
+      if (event.data === 0) { // 0 is the code for ENDED
+        setPlayingIndex((prev) => (prev + 1) % videoIds.length);
+      }
+    };
+
+    // Initialize players when the API is ready or if it's already loaded
+    let players = [];
+    const initPlayers = () => {
+      videoIds.forEach((id, index) => {
+        new window.YT.Player(`player-${brand}-${index}`, {
+          events: {
+            onStateChange: onPlayerStateChange,
+            onReady: (event) => {
+              if (index === playingIndex) {
+                event.target.mute();
+                event.target.playVideo();
+              }
+            }
+          }
+        });
+      });
+    };
+
+    if (window.YT && window.YT.Player) {
+      initPlayers();
+    } else {
+      window.onYouTubeIframeAPIReady = initPlayers;
+    }
+  }, [brand, videoIds.length]); // Re-init if brand or count changes
+
+  // Trigger play on the next video when playingIndex changes
+  React.useEffect(() => {
+    const playNext = () => {
+      const iframe = document.getElementById(`player-${brand}-${playingIndex}`);
+      if (iframe) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+      }
+    };
+    
+    // Small delay to ensure player is ready
+    const timer = setTimeout(playNext, 500);
+    return () => clearTimeout(timer);
+  }, [playingIndex, brand]);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className={`relative overflow-hidden rounded-[2rem] shadow-2xl bg-black group ${
-        isPortrait ? "aspect-[9/16] max-w-[320px] mx-auto" : "aspect-video w-full"
-      }`}
-    >
-      <iframe
-        className="absolute inset-0 w-full h-full"
-        src={`https://www.youtube.com/embed/${firstVideo}?playlist=${videoList}&autoplay=1&mute=1&loop=1&controls=1&modestbranding=1&rel=0`}
-        title={brand}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      
-      {/* Decorative Overlay */}
-      <div className="absolute inset-0 pointer-events-none border-[12px] border-white/5 rounded-[2rem]"></div>
-    </motion.div>
+    <div className={`grid gap-6 ${
+      isPortrait 
+        ? "grid-cols-2 md:grid-cols-3" 
+        : "grid-cols-1 md:grid-cols-2"
+    }`}>
+      {videoIds.map((vid, idx) => (
+        <motion.div 
+          key={`${vid}-${idx}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: idx * 0.1 }}
+          viewport={{ once: true }}
+          className={`relative overflow-hidden rounded-2xl shadow-lg bg-black group border-2 ${
+            playingIndex === idx ? "border-yellow-500" : "border-transparent"
+          } ${isPortrait ? "aspect-[9/16]" : "aspect-video"}`}
+        >
+          <iframe
+            id={`player-${brand}-${idx}`}
+            className="absolute inset-0 w-full h-full"
+            src={`https://www.youtube.com/embed/${vid}?enablejsapi=1&autoplay=${idx === 0 ? 1 : 0}&mute=1&controls=1&modestbranding=1&rel=0`}
+            title={`${brand} video ${idx + 1}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          
+          {playingIndex === idx && (
+            <div className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider animate-pulse z-10">
+              Playing Now
+            </div>
+          )}
+        </motion.div>
+      ))}
+    </div>
   );
 };
 
@@ -277,44 +346,32 @@ const CaseStudies = () => {
             </motion.div>
 
             <div className="space-y-32">
-              {currentBrandVideos.map((category, idx) => (
+              {currentBrandVideos.map((category) => (
                 <div 
                   key={category.brand}
-                  className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+                  className="flex flex-col gap-12"
                 >
                   <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
+                    className="max-w-3xl"
                   >
                     <h4 className="text-4xl font-bold mb-6 text-black flex items-center gap-4">
-                      <span className="text-yellow-500 text-5xl">0{idx + 1}</span>
+                      <span className="text-yellow-500 text-5xl">01</span>
                       {category.brand}
                     </h4>
                     <p className="text-gray-600 text-lg leading-relaxed mb-8">
                       {category.description}
                     </p>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-500 shadow-sm">
-                        #{category.brand.split(' ')[0]}
-                      </span>
-                      <span className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-500 shadow-sm">
-                        #PerformanceMarketing
-                      </span>
-                      <span className="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-500 shadow-sm">
-                        #ContentStrategy
-                      </span>
-                    </div>
                   </motion.div>
 
-                  <div>
-                    <SequentialPlayer 
-                      videoIds={category.videos} 
-                      brand={category.brand} 
-                      layout={category.layout}
-                    />
-                  </div>
+                  <VideoGallery 
+                    videoIds={category.videos} 
+                    brand={category.brand} 
+                    layout={category.layout}
+                  />
                 </div>
               ))}
             </div>
