@@ -68,7 +68,7 @@ const VIDEO_CASE_STUDIES = [
     id: 4,
     brand: "Khaiba Junction",
     description: "Redefining the digital food destination. Through consistent storytelling and relatable content, we moved beyond one-time cravings to build lasting customer loyalty and a thriving online food community.",
-    videos: ["NbXZmP_vE80", "60BbAagWF5o", "6Pgjjunvqfg", "Gwo7O5PFZwQ"],
+    videos: ["NbXZmP_vE80", "6Pgjjunvqfg", "Gwo7O5PFZwQ"],
     images: [KhaibaImg1, KhaibaImg2],
     layout: "portrait"
   }
@@ -153,15 +153,14 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
       {/* VIDEOS GRID */}
       <div className={`grid gap-6 ${isPortrait ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1 md:grid-cols-2"}`}>
         {videoIds.map((vid, idx) => (
-          <motion.div 
+          <motion.div
             key={`${vid}-${idx}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className={`relative overflow-hidden rounded-3xl shadow-xl bg-black group border-2 ${
-              playingIndex === idx ? "border-yellow-500" : "border-transparent"
-            } ${isPortrait ? "aspect-[9/16]" : "aspect-video"}`}
+            className={`relative overflow-hidden rounded-3xl shadow-xl bg-black group border-2 ${playingIndex === idx ? "border-yellow-500" : "border-transparent"
+              } ${isPortrait ? "aspect-[9/16]" : "aspect-video"}`}
           >
             <iframe
               id={`player-${brand}-${idx}`}
@@ -172,7 +171,7 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            
+
             {playingIndex === idx && (
               <div className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse z-10">
                 Live
@@ -371,7 +370,7 @@ const CaseStudies = () => {
       {currentBrandVideos.length > 0 && (
         <div className="w-full bg-[#f8f8f8] py-24 lg:py-32 px-6 lg:px-20">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -387,14 +386,14 @@ const CaseStudies = () => {
 
             <div className="space-y-32">
               {currentBrandVideos.map((category) => (
-                <div 
+                <div
                   key={category.brand}
                   className="flex flex-col gap-12"
                 >
-                  <BrandGallery 
-                    videoIds={category.videos} 
+                  <BrandGallery
+                    videoIds={category.videos}
                     images={category.images}
-                    brand={category.brand} 
+                    brand={category.brand}
                     layout={category.layout}
                   />
                 </div>
