@@ -78,13 +78,27 @@ const VIDEO_CASE_STUDIES = [
 // Unified Gallery Component showing both images and videos
 const BrandGallery = ({ videoIds, images, brand, layout }) => {
   const [playingIndex, setPlayingIndex] = React.useState(0);
-  const [currentImg, setCurrentImg] = React.useState(0);
+  const [scrollX, setScrollX] = React.useState(0);
   const isPortrait = layout === "portrait";
+  const containerRef = React.useRef(null);
 
-  const nextImg = () => setCurrentImg((prev) => (prev + 1) % images.length);
-  const prevImg = () => setCurrentImg((prev) => (prev - 1 + images.length) % images.length);
+  // Scroll logic for the carousel
+  const scroll = (direction) => {
+    if (containerRef.current) {
+      const scrollAmount = 400; // Adjust based on item width
+      const newScroll = direction === 'next' 
+        ? Math.min(scrollX + scrollAmount, containerRef.current.scrollWidth - containerRef.current.offsetWidth)
+        : Math.max(scrollX - scrollAmount, 0);
+      
+      setScrollX(newScroll);
+      containerRef.current.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
 
-  // Use the YouTube IFrame API to detect when a video ends
+  // YouTube API logic remains the same
   React.useEffect(() => {
     if (!window.YT) {
       const tag = document.createElement("script");
@@ -139,63 +153,47 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
 
   return (
     <div className="flex flex-col gap-16">
-      {/* IMAGES SLIDER */}
-      <div className="relative group">
-        <div className="overflow-hidden rounded-[2rem] shadow-2xl bg-gray-100 aspect-video lg:aspect-[21/9]">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImg}
-              src={images[currentImg]}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full h-full object-cover"
-              alt={`${brand} study ${currentImg + 1}`}
-            />
-          </AnimatePresence>
-
-          {/* Slider Overlay Info */}
-          <div className="absolute bottom-8 left-8 z-10">
-            <div className="flex items-center gap-4 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-              <span className="text-yellow-500 font-bold text-sm tracking-widest">
-                {String(currentImg + 1).padStart(2, '0')}
-              </span>
-              <div className="h-4 w-px bg-white/20"></div>
-              <span className="text-white/80 text-xs font-medium uppercase tracking-wider">
-                Project Gallery
-              </span>
-            </div>
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button 
-              onClick={prevImg}
-              className="w-14 h-14 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all transform hover:scale-110"
+      {/* MULTI-ITEM IMAGES CAROUSEL */}
+      <div className="relative group w-full">
+        <div 
+          ref={containerRef}
+          className="flex gap-6 overflow-x-auto no-scrollbar pb-8 px-2 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {images.map((img, idx) => (
+            <motion.div
+              key={`img-${idx}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className={`shrink-0 snap-center rounded-[2rem] overflow-hidden shadow-xl bg-white border border-gray-100 p-2 flex items-center justify-center ${
+                isPortrait ? "h-[500px] w-[350px]" : "h-[400px] w-[600px]"
+              }`}
             >
-              <FiChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={nextImg}
-              className="w-14 h-14 rounded-full bg-white/90 shadow-xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all transform hover:scale-110"
-            >
-              <FiChevronRight size={24} />
-            </button>
-          </div>
+              <img 
+                src={img} 
+                alt={`${brand} study ${idx + 1}`} 
+                className="w-full h-full object-contain rounded-[1.5rem]" 
+              />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Thumbnails / Indicators */}
-        <div className="flex justify-center gap-3 mt-8">
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentImg(idx)}
-              className={`h-1.5 transition-all duration-500 rounded-full ${
-                currentImg === idx ? "w-12 bg-yellow-500" : "w-4 bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
-          ))}
+        {/* Navigation Controls */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-4 lg:-mx-8">
+          <button 
+            onClick={() => scroll('prev')}
+            className="w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all pointer-events-auto border border-gray-100"
+          >
+            <FiChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={() => scroll('next')}
+            className="w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all pointer-events-auto border border-gray-100"
+          >
+            <FiChevronRight size={20} />
+          </button>
         </div>
       </div>
 
