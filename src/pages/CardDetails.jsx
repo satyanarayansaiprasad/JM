@@ -391,22 +391,6 @@ const CaseStudies = () => {
                   key={category.brand}
                   className="flex flex-col gap-12"
                 >
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="max-w-3xl"
-                  >
-                    <h4 className="text-4xl font-bold mb-6 text-black flex items-center gap-4">
-                      <span className="text-yellow-500 text-5xl">01</span>
-                      {category.brand}
-                    </h4>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                      {category.description}
-                    </p>
-                  </motion.div>
-
                   <BrandGallery 
                     videoIds={category.videos} 
                     images={category.images}
