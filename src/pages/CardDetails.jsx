@@ -10,9 +10,8 @@ import Card4bg from "../assets2/card4bg.webp";
 import Card4Logo from "../assets2/card4logo.webp";
 import Card1logo from "../assets2/card1logo.webp";
 import Card1bg from "../assets2/card1bg.webp";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 // Import Images for Kho Kho
 import KhoKhoImg1 from "../assets/kho kho/60985.jpg";
 import KhoKhoImg2 from "../assets/kho kho/60995.jpg";
@@ -78,27 +77,9 @@ const VIDEO_CASE_STUDIES = [
 // Unified Gallery Component showing both images and videos
 const BrandGallery = ({ videoIds, images, brand, layout }) => {
   const [playingIndex, setPlayingIndex] = React.useState(0);
-  const [scrollX, setScrollX] = React.useState(0);
   const isPortrait = layout === "portrait";
-  const containerRef = React.useRef(null);
 
-  // Scroll logic for the carousel
-  const scroll = (direction) => {
-    if (containerRef.current) {
-      const scrollAmount = 400; // Adjust based on item width
-      const newScroll = direction === 'next' 
-        ? Math.min(scrollX + scrollAmount, containerRef.current.scrollWidth - containerRef.current.offsetWidth)
-        : Math.max(scrollX - scrollAmount, 0);
-      
-      setScrollX(newScroll);
-      containerRef.current.scrollTo({
-        left: newScroll,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // YouTube API logic remains the same
+  // Use the YouTube IFrame API to detect when a video ends
   React.useEffect(() => {
     if (!window.YT) {
       const tag = document.createElement("script");
@@ -152,49 +133,21 @@ const BrandGallery = ({ videoIds, images, brand, layout }) => {
   }, [playingIndex, brand]);
 
   return (
-    <div className="flex flex-col gap-16">
-      {/* MULTI-ITEM IMAGES CAROUSEL */}
-      <div className="relative group w-full">
-        <div 
-          ref={containerRef}
-          className="flex gap-6 overflow-x-auto no-scrollbar pb-8 px-2 snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {images.map((img, idx) => (
-            <motion.div
-              key={`img-${idx}`}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className={`shrink-0 snap-center rounded-[2rem] overflow-hidden shadow-xl bg-white border border-gray-100 p-2 flex items-center justify-center ${
-                isPortrait ? "h-[500px] w-[350px]" : "h-[400px] w-[600px]"
-              }`}
-            >
-              <img 
-                src={img} 
-                alt={`${brand} study ${idx + 1}`} 
-                className="w-full h-full object-contain rounded-[1.5rem]" 
-              />
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Navigation Controls */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-4 lg:-mx-8">
-          <button 
-            onClick={() => scroll('prev')}
-            className="w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all pointer-events-auto border border-gray-100"
+    <div className="flex flex-col gap-12">
+      {/* IMAGES MASONRY/GRID */}
+      <div className={`grid gap-6 ${isPortrait ? "grid-cols-2 lg:grid-cols-4" : "grid-cols-1 md:grid-cols-3"}`}>
+        {images.map((img, idx) => (
+          <motion.div
+            key={`img-${idx}`}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            viewport={{ once: true }}
+            className={`relative overflow-hidden rounded-3xl shadow-lg bg-gray-100 ${isPortrait ? "aspect-[3/4]" : "aspect-[4/3]"}`}
           >
-            <FiChevronLeft size={20} />
-          </button>
-          <button 
-            onClick={() => scroll('next')}
-            className="w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center text-black hover:bg-yellow-500 hover:text-white transition-all pointer-events-auto border border-gray-100"
-          >
-            <FiChevronRight size={20} />
-          </button>
-        </div>
+            <img src={img} alt={`${brand} study ${idx + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </motion.div>
+        ))}
       </div>
 
       {/* VIDEOS GRID */}
